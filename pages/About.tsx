@@ -8,7 +8,7 @@ const About: React.FC = () => {
       <div className="max-w-4xl mx-auto px-4">
         <div className="flex flex-col md:flex-row gap-12 items-center mb-20">
           <div className="w-48 h-48 bg-slate-200 rounded-full flex-shrink-0 overflow-hidden shadow-xl border-4 border-white">
-             <img src="https://picsum.photos/seed/consultant/400/400" alt="Consultor" className="w-full h-full object-cover" />
+             <img src="/images/Foto LI.jpg" alt="Jorge Rivera" className="w-full h-full object-cover" />
           </div>
           <div>
             <h1 className="text-4xl font-extrabold text-slate-900 mb-4">Ayudo a pymes a recuperar el control.</h1>
