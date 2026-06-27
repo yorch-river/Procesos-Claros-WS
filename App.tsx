@@ -119,7 +119,7 @@ const Footer = () => (
         <div>
           <h4 className="text-lg font-semibold mb-6">Contacto</h4>
           <ul className="space-y-4 text-slate-400">
-            <li className="flex items-center gap-2"><Mail className="w-4 h-4" /> contacto@procesosclaros.com</li>
+            <li className="flex items-center gap-2"><Mail className="w-4 h-4" /> jorge@procesosclaros.com</li>
             <li className="flex items-center gap-2 underline"><Link to="/contacto">Solicitar Diagnóstico</Link></li>
           </ul>
         </div>
