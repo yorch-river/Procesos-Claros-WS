@@ -9,7 +9,7 @@ export const post: Post = {
   excerpt:
     "Un checklist de 10 puntos para evaluar tu madurez operativa antes de firmar cualquier contrato de software.",
   category: "Guía",
-  datePublished: "2024-02-28",
+  datePublished: "2026-05-07",
   readingMinutes: 9,
   intro:
     "“Estar listo para digitalizar” no es una sensación: es una condición verificable. Estas diez preguntas son las que uso en un diagnóstico de madurez. Respóndelas con honestidad, en voz alta, y anota cuántas puedes contestar sin dudar.",

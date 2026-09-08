@@ -9,7 +9,7 @@ export const post: Post = {
   excerpt:
     "Muchas empresas culpan a la tecnología cuando el problema es la falta de procesos claros. Aprende a distinguir la raíz del caos.",
   category: "Estrategia",
-  datePublished: "2024-03-12",
+  datePublished: "2026-09-08",
   readingMinutes: 7,
   intro:
     "Casi todas las conversaciones que tengo con dueños de pymes empiezan igual: “necesitamos un sistema”. Es una frase honesta, pero casi siempre es la respuesta correcta a la pregunta equivocada.",

@@ -9,7 +9,7 @@ export const post: Post = {
   excerpt:
     "Las estadísticas son aterradoras. Analizamos los 3 errores más comunes que cometen los dueños de pymes al digitalizar.",
   category: "Tecnología",
-  datePublished: "2024-03-05",
+  datePublished: "2026-07-09",
   readingMinutes: 8,
   intro:
     "Cuando una implementación de ERP fracasa, la conversación posterior casi siempre culpa al software o al proveedor. En mi experiencia, ninguna de las dos cosas suele ser la causa real. Los proyectos que se caen tienen un patrón, y el patrón empieza mucho antes de la primera reunión técnica.",

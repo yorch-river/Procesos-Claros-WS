@@ -9,7 +9,7 @@ export const post: Post = {
   excerpt:
     "Si creces pero sientes que el beneficio se escapa por las manos, es probable que tus procesos no estén escalando.",
   category: "Gestión",
-  datePublished: "2024-02-20",
+  datePublished: "2026-03-05",
   readingMinutes: 8,
   intro:
     "El desorden operativo tiene una característica traicionera: aparece justo cuando al negocio le está yendo bien. Mientras eras chico, la informalidad era una ventaja; podías resolver cualquier cosa con una conversación. Al crecer, esa misma informalidad se convierte en el costo oculto que se come tu margen.",

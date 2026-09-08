@@ -9,7 +9,7 @@ export const post: Post = {
   excerpt:
     "El huevo o la gallina de la gestión empresarial. Te explicamos por qué invertir el orden es una receta para el desastre.",
   category: "Opinión",
-  datePublished: "2024-02-15",
+  datePublished: "2026-01-15",
   readingMinutes: 7,
   intro:
     "Es la objeción que más me hacen: “si ordeno primero, voy a definir procesos que después el sistema me va a obligar a cambiar igual. ¿No es mejor comprar el ERP y adaptarme a él?”. Es una objeción legítima y merece una respuesta seria, porque tiene una parte de razón.",
