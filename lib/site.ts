@@ -14,7 +14,7 @@ export const site = {
   locale: "es_CL",
   lang: "es-CL",
   country: "CL",
-  email: "jorge@procesosclaros.com",
+  email: "jorge@procesosclaros.cl",
   linkedin: "https://www.linkedin.com/in/jriveradelvalle",
   founder: {
     name: "Jorge Rivera",
