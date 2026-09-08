@@ -40,7 +40,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900">Email Directo</h4>
-                  <p className="text-slate-600">hola@procesosclaros.com</p>
+                  <p className="text-slate-600">jorge@procesosclaros.com</p>
                 </div>
               </div>
               <div className="flex gap-4">
@@ -49,7 +49,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900">LinkedIn</h4>
-                  <p className="text-slate-600">linkedin.com/in/consultorpyme</p>
+                  <p className="text-slate-600">linkedin.com/in/jriveradelvalle</p>
                 </div>
               </div>
             </div>
