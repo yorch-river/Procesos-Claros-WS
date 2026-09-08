@@ -24,7 +24,9 @@ const iconos = {
 
 export default function ServiciosPage() {
   return (
-    <div className="bg-slate-50 py-20">
+    /* `pt-20` y no `py-20`: el CTA de abajo es una banda a sangre completa y
+       el padding inferior dejaba una franja clara entre esa banda y el pie. */
+    <div className="bg-slate-50 pt-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Breadcrumbs items={[{ name: "Servicios", path: "/servicios" }]} />
 
