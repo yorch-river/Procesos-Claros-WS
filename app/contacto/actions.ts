@@ -20,10 +20,14 @@ function campo(formData: FormData, nombre: string, maxLength: number): string {
  * sin enviar nada: cada solicitud de diagnóstico se perdía. Acá el mensaje de
  * éxito se muestra únicamente si el envío se completó de verdad.
  *
- * Requiere dos variables de entorno en Vercel:
- *   RESEND_API_KEY  — clave de la cuenta de Resend (resend.com)
- *   CONTACT_TO      — correo donde llegan los mensajes (opcional; por defecto
- *                     el correo público del sitio)
+ * Variables de entorno en Vercel:
+ *   RESEND_API_KEY  — obligatoria. Clave de la cuenta de Resend (resend.com).
+ *   CONTACT_TO      — opcional. Correo donde llegan los mensajes; por defecto,
+ *                     el correo público del sitio.
+ *   CONTACT_FROM    — opcional. Remitente, en formato `Nombre <correo>`. Exige
+ *                     un dominio verificado en Resend. Sin ella se usa el
+ *                     remitente de pruebas, que solo entrega al correo de la
+ *                     cuenta de Resend.
  */
 export async function enviarContacto(
   _prevState: ContactState,
@@ -65,6 +69,14 @@ export async function enviarContacto(
 
   const destino = process.env.CONTACT_TO ?? site.email;
 
+  // Resend solo despacha desde dominios verificados con registros DNS. Hasta
+  // que procesosclaros.cl esté verificado, `onboarding@resend.dev` funciona
+  // sin configuración —con la limitación de que solo entrega al correo de la
+  // cuenta de Resend—, así que el formulario arranca el mismo día. Una vez
+  // verificado el dominio, basta definir CONTACT_FROM en Vercel.
+  const remitente =
+    process.env.CONTACT_FROM ?? "Procesos Claros <onboarding@resend.dev>";
+
   try {
     const respuesta = await fetch("https://api.resend.com/emails", {
       method: "POST",
@@ -73,7 +85,7 @@ export async function enviarContacto(
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: `Procesos Claros <no-responder@procesosclaros.cl>`,
+        from: remitente,
         to: [destino],
         reply_to: email,
         subject: `Diagnóstico solicitado: ${empresa}`,

@@ -35,6 +35,12 @@ El formulario de contacto envía por [Resend](https://resend.com). En Vercel:
 | ---------------- | ----------- | ------------------------------------------------------- |
 | `RESEND_API_KEY` | Sí          | Clave de API de Resend. Sin ella el formulario avisa al visitante y muestra el correo directo, en vez de fingir un envío exitoso. |
 | `CONTACT_TO`     | No          | Correo donde llegan los mensajes. Por defecto, el de `lib/site.ts`. |
+| `CONTACT_FROM`   | No          | Remitente, en formato `Nombre <correo>`. Requiere tener el dominio verificado en Resend. Sin ella se usa el remitente de pruebas de Resend, que solo entrega al correo de la cuenta. |
+
+Para recibir mensajes desde cualquier visitante hay que verificar
+`procesosclaros.cl` en Resend (añadiendo los registros DNS que indica) y
+definir `CONTACT_FROM`. Mientras no esté verificado, el formulario funciona
+pero los avisos solo llegan al correo con que se creó la cuenta de Resend.
 
 ## Estructura
 
