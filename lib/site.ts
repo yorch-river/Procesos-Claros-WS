@@ -34,12 +34,23 @@ export function absoluteUrl(path = "/"): string {
   return `${site.url}${path === "/" ? "" : path}`;
 }
 
-/** Navegación principal. Es la fuente del menú, del footer y del sitemap. */
+/**
+ * Navegación principal. Es la fuente del menú, del footer y del sitemap.
+ *
+ * Productos está fuera a propósito: todavía no hay productos que entregar ni
+ * medio de pago, y una sección que no puede cumplir lo que ofrece resta más de
+ * lo que suma. La página sigue escrita en `app/_productos/`; el guion bajo la
+ * saca del sistema de rutas de Next sin borrar nada.
+ *
+ * Para reactivarla: renombrar `app/_productos` a `app/productos`, devolver
+ * aquí la entrada { name: "Productos", path: "/productos" } entre Servicios y
+ * Blog, restituir el enlace en el pie de página y la línea correspondiente en
+ * `app/sitemap.ts`.
+ */
 export const navigation = [
   { name: "Inicio", path: "/" },
   { name: "Antes del ERP", path: "/antes-del-erp" },
   { name: "Servicios", path: "/servicios" },
-  { name: "Productos", path: "/productos" },
   { name: "Blog", path: "/blog" },
   { name: "Sobre Mí", path: "/sobre-mi" },
   { name: "Contacto", path: "/contacto" },

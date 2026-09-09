@@ -16,7 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: absoluteUrl("/"), changeFrequency: "monthly", priority: 1 },
     { url: absoluteUrl("/antes-del-erp"), changeFrequency: "monthly", priority: 0.9 },
     { url: absoluteUrl("/servicios"), changeFrequency: "monthly", priority: 0.9 },
-    { url: absoluteUrl("/productos"), changeFrequency: "monthly", priority: 0.8 },
+    // Productos no se lista: la ruta está desactivada. Ver lib/site.ts.
     { url: absoluteUrl("/blog"), changeFrequency: "weekly", priority: 0.8 },
     { url: absoluteUrl("/sobre-mi"), changeFrequency: "yearly", priority: 0.7 },
     { url: absoluteUrl("/contacto"), changeFrequency: "yearly", priority: 0.7 },
