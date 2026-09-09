@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+/*
+ * Tailwind se compila en el build y viaja como CSS estático.
+ * Antes el sitio cargaba `cdn.tailwindcss.com`, que compila las clases en el
+ * navegador de cada visitante: bloquea el render, empeora el LCP y penaliza
+ * Core Web Vitals, que es factor de ranking.
+ */
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Evita que el encabezado fijo tape el título al saltar a un ancla. */
+  scroll-padding-top: 6rem;
+}
+
+body {
+  font-family: var(--font-sans);
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+/* Respeta a quien pidió menos movimiento en su sistema operativo. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Foco visible y consistente para navegación por teclado. */
+:focus-visible {
+  outline: 2px solid var(--color-blue-600);
+  outline-offset: 2px;
+}

@@ -1,23 +1,29 @@
 {
-  "name": "procesos-claros-consultoría",
+  "name": "procesos-claros",
+  "version": "1.0.0",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "description": "Sitio de Procesos Claros: consultoria independiente de procesos para pymes en Chile, previa a la digitalizacion y a la implementacion de un ERP.",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "lucide-react": "^0.564.0",
-    "react-router-dom": "^7.13.0",
-    "react-dom": "^19.2.4",
-    "react": "^19.2.4"
+    "lucide-react": "0.564.0",
+    "next": "16.3.4",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
   },
   "devDependencies": {
-    "@types/node": "^22.14.0",
-    "@vitejs/plugin-react": "^5.0.0",
-    "typescript": "~5.8.2",
-    "vite": "^6.2.0"
+    "@tailwindcss/postcss": "4.1.14",
+    "@types/node": "22.18.1",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.7",
+    "eslint": "9.36.0",
+    "eslint-config-next": "16.3.4",
+    "tailwindcss": "4.1.14",
+    "typescript": "5.9.2"
   }
 }

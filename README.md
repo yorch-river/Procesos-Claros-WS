@@ -1,20 +1,74 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Procesos Claros
 
-# Run and deploy your AI Studio app
+Sitio de **Procesos Claros**: consultoría independiente de procesos para pymes en Chile,
+previa a la digitalización y a la implementación de un ERP.
 
-This contains everything you need to run your app locally.
+Producción: <https://procesosclaros.cl>
 
-View your app in AI Studio: https://ai.studio/apps/drive/1PUslVzy7xXhLQyu2MsTIohMXGuOFcPk8
+## Stack
 
-## Run Locally
+- **Next.js 16** (App Router), generación estática
+- **React 19** · **TypeScript** · **Tailwind CSS 4**
+- Desplegado en **Vercel**
 
-**Prerequisites:**  Node.js
+## Desarrollo
 
+```bash
+npm install
+npm run dev        # http://localhost:3000
+```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Otros comandos:
+
+```bash
+npm run build      # build de producción
+npm run start      # sirve el build
+npm run lint       # ESLint
+npm run typecheck  # TypeScript sin emitir
+```
+
+## Variables de entorno
+
+El formulario de contacto envía por [Resend](https://resend.com). En Vercel:
+
+| Variable         | Obligatoria | Descripción                                             |
+| ---------------- | ----------- | ------------------------------------------------------- |
+| `RESEND_API_KEY` | Sí          | Clave de API de Resend. Sin ella el formulario avisa al visitante y muestra el correo directo, en vez de fingir un envío exitoso. |
+| `CONTACT_TO`     | No          | Correo donde llegan los mensajes. Por defecto, el de `lib/site.ts`. |
+
+## Estructura
+
+```
+app/                 Rutas (una carpeta = una URL indexable)
+  layout.tsx         Metadata base, idioma y datos estructurados globales
+  sitemap.ts         /sitemap.xml generado desde el contenido
+  robots.ts          /robots.txt
+  opengraph-image.tsx  Imagen para compartir en redes
+components/          UI reutilizable
+content/             Artículos, servicios y productos (fuente única)
+lib/site.ts          Dominio, correo y datos de la marca
+lib/seo.ts           Constructor de metadata por página
+lib/schema.ts        Generadores de schema.org
+```
+
+## Cómo publicar un artículo
+
+1. Crea `content/posts/<slug>.ts` copiando la forma de cualquier artículo existente.
+2. Impórtalo en `content/posts.ts` y agrégalo al array `posts`.
+
+Su URL, su entrada en el sitemap, sus datos estructurados y sus enlaces internos
+se generan solos.
+
+## Notas de SEO
+
+Estas decisiones son deliberadas; conviene no revertirlas sin motivo:
+
+- **Rutas reales, no `HashRouter`.** Con `#` en la URL, los buscadores tratan
+  todo el sitio como una sola página.
+- **HTML pre-renderizado.** Cada ruta se genera como HTML completo en el build,
+  sin depender de que el rastreador ejecute JavaScript.
+- **Un `title`, una `description` y un `canonical` por página**, todos bajo los
+  límites que muestra Google (≈60 y ≈160 caracteres).
+- **Tailwind compilado**, no por CDN: el CDN compila en el navegador de cada
+  visitante y penaliza Core Web Vitals.
+- **Un solo `<h1>` por página**, con `h2`/`h3` en orden.
