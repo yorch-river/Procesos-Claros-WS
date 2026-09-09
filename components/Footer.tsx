@@ -46,14 +46,8 @@ export default function Footer() {
                   Servicios
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/productos"
-                  className="transition-colors hover:text-blue-400"
-                >
-                  Productos Digitales
-                </Link>
-              </li>
+              {/* Productos está oculto mientras no exista el catálogo ni el
+                  medio de pago. Ver la nota en lib/site.ts para reactivarlo. */}
               <li>
                 <Link
                   href="/blog"
