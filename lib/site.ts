@@ -9,8 +9,11 @@
 export const site = {
   name: "Procesos Claros",
   legalName: "Procesos Claros Consultoría",
-  // Sin barra final: se concatena con rutas que ya empiezan con "/".
-  url: "https://procesosclaros.cl",
+  // Con "www" y sin barra final. Debe ser exactamente el dominio de
+  // producción en Vercel: procesosclaros.cl responde con un 308 hacia
+  // www.procesosclaros.cl, así que apuntar acá a la versión sin www dejaría
+  // cada canonical señalando a una URL que redirige.
+  url: "https://www.procesosclaros.cl",
   locale: "es_CL",
   lang: "es-CL",
   country: "CL",
