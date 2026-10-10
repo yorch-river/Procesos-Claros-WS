@@ -23,14 +23,17 @@ export default async function OpengraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#0f172a",
+          background: "#1a1c1f",
           padding: "72px",
           fontFamily: "sans-serif",
         }}
       >
-        <div style={{ display: "flex", fontSize: 34, fontWeight: 700, letterSpacing: -1 }}>
-          <span style={{ color: "#ffffff" }}>PROCESOS</span>
-          <span style={{ color: "#60a5fa" }}>CLAROS</span>
+        <div style={{ display: "flex", alignItems: "center", gap: 18, fontSize: 34, fontWeight: 700, letterSpacing: -1, color: "#ffffff" }}>
+          <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", gap: 8, width: 40, height: 40, border: "3px solid #ffffff", padding: "0 8px" }}>
+            <div style={{ display: "flex", width: 20, height: 3, background: "#f2a65a" }} />
+            <div style={{ display: "flex", width: 12, height: 3, background: "#f2a65a" }} />
+          </div>
+          Procesos Claros
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
@@ -45,16 +48,17 @@ export default async function OpengraphImage() {
               letterSpacing: -2,
             }}
           >
-            Antes de implementar un ERP, ordena tu negocio.
+            Antes de implementar un ERP,{" "}
+            <span style={{ color: "#f2a65a" }}>ordena tu negocio.</span>
           </div>
-          <div style={{ display: "flex", marginTop: 28, fontSize: 30, color: "#94a3b8" }}>
+          <div style={{ display: "flex", marginTop: 28, fontSize: 30, color: "#a6aab1" }}>
             Consultoría independiente de procesos para pymes · Chile
           </div>
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-          <div style={{ display: "flex", width: 80, height: 6, background: "#2563eb" }} />
-          <div style={{ display: "flex", fontSize: 26, color: "#cbd5e1" }}>
+          <div style={{ display: "flex", width: 80, height: 6, background: "#b45309" }} />
+          <div style={{ display: "flex", fontSize: 26, color: "#d8dadd" }}>
             procesosclaros.cl
           </div>
         </div>

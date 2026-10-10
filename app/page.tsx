@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Check, X } from "lucide-react";
+import CtaFinal from "@/components/CtaFinal";
 import JsonLd from "@/components/JsonLd";
 import {
   EsquemaDesorden,
@@ -10,10 +10,10 @@ import {
   FiguraExcel,
   FiguraPreparacion,
   FiguraSistematizacion,
-} from "@/components/home/Figuras";
+} from "@/components/Figuras";
 import { pageMetadata } from "@/lib/seo";
 import { serviceSchema } from "@/lib/schema";
-import { site } from "@/lib/site";
+import { botonPrimario, botonSecundario, contenedor, rotulo } from "@/lib/estilos";
 import { servicios } from "@/content/servicios";
 
 export const metadata = pageMetadata({
@@ -80,9 +80,6 @@ const noParaTi = [
   "Quieres “la solución mágica” sin documentar cómo trabaja tu empresa.",
 ];
 
-const contenedor = "mx-auto max-w-[1320px] px-5 sm:px-8 lg:px-[60px]";
-const rotulo = "font-mono text-[13px] tracking-wide text-gris";
-
 export default function HomePage() {
   return (
     <>
@@ -117,13 +114,13 @@ export default function HomePage() {
           <div className="flex flex-[1_1_300px] flex-wrap gap-3">
             <Link
               href="/contacto"
-              className="inline-flex min-h-[54px] items-center gap-3 bg-tinta px-6 font-semibold text-white transition-colors hover:bg-ocre"
+              className={botonPrimario}
             >
               Haz el diagnóstico gratuito <span aria-hidden="true">→</span>
             </Link>
             <Link
               href="/antes-del-erp"
-              className="inline-flex min-h-[54px] items-center border-[1.5px] border-[#C9CBCF] px-6 font-semibold transition-colors hover:border-tinta"
+              className={botonSecundario}
             >
               ¿Por qué ordenar primero?
             </Link>
@@ -261,54 +258,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Cierre con la persona detrás del servicio */}
-      <section className="border-t-2 border-tinta">
-        <div
-          className={`${contenedor} flex flex-wrap items-end justify-between gap-x-16 gap-y-10 py-20 lg:py-32`}
-        >
-          <div className="min-w-0 flex-[999_1_560px]">
-            <p className={`${rotulo} mb-5`}>
-              04 / Diagnóstico gratuito · 30 min
-            </p>
-            <h2 className="mb-6 text-[clamp(2.5rem,5.4vw,5rem)] font-bold leading-[0.98] tracking-[-0.04em]">
-              ¿Listo para poner orden en tu operación?
-            </h2>
-            <p className="max-w-[560px] text-[19px] text-gris-medio">
-              Conversemos 30 minutos sobre tu operación y evaluemos, sin costo,
-              si tu empresa está lista para dar el paso.
-            </p>
-          </div>
-          <div className="flex max-w-[360px] flex-[1_1_300px] flex-col gap-5">
-            <figure className="flex items-center gap-4 border-b border-linea pb-5">
-              <Image
-                src={site.founder.image}
-                alt={site.founder.name}
-                width={88}
-                height={88}
-                className="h-[88px] w-[88px] flex-none object-cover grayscale"
-              />
-              <figcaption className="text-[15px] leading-snug text-gris-medio">
-                <strong className="block text-[17px] font-bold text-tinta">
-                  {site.founder.name}
-                </strong>
-                Consultor independiente de procesos y operaciones
-              </figcaption>
-            </figure>
-            <Link
-              href="/contacto"
-              className="inline-flex min-h-[60px] items-center justify-between gap-3 bg-ocre px-6 text-[17px] font-semibold text-white transition-colors hover:bg-ocre-oscuro"
-            >
-              Solicitar diagnóstico gratuito <span aria-hidden="true">→</span>
-            </Link>
-            <Link
-              href="/antes-del-erp"
-              className="inline-flex min-h-[52px] items-center border-[1.5px] border-[#C9CBCF] px-6 font-semibold transition-colors hover:border-tinta"
-            >
-              ¿Por qué ordenar primero?
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CtaFinal
+        rotulo="04 / Diagnóstico gratuito · 30 min"
+        description="Conversemos 30 minutos sobre tu operación y evaluemos, sin costo, si tu empresa está lista para dar el paso."
+      />
     </>
   );
 }

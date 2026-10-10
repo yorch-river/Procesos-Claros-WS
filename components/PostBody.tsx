@@ -1,23 +1,26 @@
-import { Check } from "lucide-react";
+import { FiguraNota } from "./Figuras";
 import type { PostBlock, PostSection } from "@/content/types";
 
 function Bloque({ bloque }: { bloque: PostBlock }) {
   switch (bloque.kind) {
     case "parrafo":
       return (
-        <p className="mb-6 text-lg leading-relaxed text-slate-700">
+        <p className="mb-6 text-lg leading-relaxed text-tinta-suave">
           {bloque.texto}
         </p>
       );
 
     case "lista":
       return (
-        <ul className="mb-8 space-y-3">
+        <ul className="mb-8 border-t border-linea">
           {bloque.items.map((item) => (
-            <li key={item} className="flex gap-3 text-lg text-slate-700">
-              <Check
-                className="mt-1.5 h-5 w-5 flex-shrink-0 text-blue-500"
+            <li
+              key={item}
+              className="flex gap-4 border-b border-linea py-3.5 text-lg text-tinta-suave"
+            >
+              <span
                 aria-hidden="true"
+                className="mt-[0.65em] h-2 w-2 flex-none bg-ocre"
               />
               <span>{item}</span>
             </li>
@@ -27,16 +30,19 @@ function Bloque({ bloque }: { bloque: PostBlock }) {
 
     case "lista-numerada":
       return (
-        <ol className="mb-8 space-y-4">
+        <ol className="mb-8 border-t border-linea">
           {bloque.items.map((item, index) => (
-            <li key={item} className="flex gap-4 text-lg text-slate-700">
+            <li
+              key={item}
+              className="flex gap-5 border-b border-linea py-4 text-lg text-tinta-suave"
+            >
               <span
                 aria-hidden="true"
-                className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 font-bold text-white"
+                className="w-7 flex-none text-[26px] font-bold leading-none tracking-[-0.03em] text-ocre"
               >
                 {index + 1}
               </span>
-              <span className="pt-0.5">{item}</span>
+              <span>{item}</span>
             </li>
           ))}
         </ol>
@@ -44,12 +50,18 @@ function Bloque({ bloque }: { bloque: PostBlock }) {
 
     case "cita":
       return (
-        <blockquote className="mb-8 border-l-4 border-blue-600 bg-blue-50 py-6 pl-6 pr-6">
-          <p className="text-xl font-medium leading-relaxed text-slate-800">
+        <blockquote className="my-12 border-y-2 border-tinta py-8">
+          <span
+            aria-hidden="true"
+            className="mb-2 block text-6xl font-bold leading-[0.6] text-ocre"
+          >
+            “
+          </span>
+          <p className="text-[clamp(1.5rem,2.6vw,2rem)] font-semibold leading-snug tracking-[-0.015em]">
             {bloque.texto}
           </p>
           {bloque.autor && (
-            <footer className="mt-3 text-sm text-slate-500">
+            <footer className="mt-4 font-mono text-[13px] text-gris">
               — {bloque.autor}
             </footer>
           )}
@@ -58,12 +70,17 @@ function Bloque({ bloque }: { bloque: PostBlock }) {
 
     case "destacado":
       return (
-        <aside className="mb-8 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
-          {/* H3: cuelga del H2 de la sección, sin saltarse niveles. */}
-          <h3 className="mb-3 text-lg font-bold text-slate-900">
-            {bloque.titulo}
-          </h3>
-          <p className="leading-relaxed text-slate-600">{bloque.texto}</p>
+        <aside className="mb-8 flex gap-6 bg-papel p-7 sm:p-8">
+          <FiguraNota className="h-12 w-12 flex-none" />
+          <div>
+            {/* H3: cuelga del H2 de la sección, sin saltarse niveles. */}
+            <h3 className="mb-2 text-xl font-bold tracking-[-0.01em]">
+              {bloque.titulo}
+            </h3>
+            <p className="text-lg leading-relaxed text-gris-medio">
+              {bloque.texto}
+            </p>
+          </div>
         </aside>
       );
   }
@@ -80,8 +97,8 @@ export default function PostBody({ sections }: { sections: PostSection[] }) {
   return (
     <>
       {sections.map((section) => (
-        <section key={section.heading} className="mb-12">
-          <h2 className="mb-6 text-2xl font-bold text-slate-900 sm:text-3xl">
+        <section key={section.heading} className="mb-14">
+          <h2 className="mb-6 text-[clamp(1.75rem,3vw,2.25rem)] font-bold leading-tight tracking-[-0.025em]">
             {section.heading}
           </h2>
           {section.bloques.map((bloque, index) => (
