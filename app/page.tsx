@@ -103,7 +103,7 @@ export default function HomePage() {
             palabra clave por la que queremos rankear. */}
         <h1 className="max-w-[900px] text-[clamp(2.25rem,4.8vw,4rem)] font-bold leading-[1.06] tracking-[-0.025em]">
           Antes de implementar un ERP,{" "}
-          <span className="text-ocre">ordena tu negocio.</span>
+          <span className="text-acento">ordena tu negocio.</span>
         </h1>
         <div className="mt-10 flex flex-wrap items-start gap-x-12 gap-y-7 border-t-2 border-tinta pt-7 lg:mt-16">
           <p className="max-w-[560px] flex-[2_1_380px] text-xl leading-normal text-tinta-suave">
@@ -157,7 +157,7 @@ export default function HomePage() {
             </blockquote>
             <Link
               href="/antes-del-erp"
-              className="mt-5 inline-block py-2.5 text-ocre-claro underline underline-offset-4 hover:text-white"
+              className="mt-5 inline-block py-2.5 text-acento-claro underline underline-offset-4 hover:text-white"
             >
               Leer por qué fallan las implementaciones →
             </Link>
@@ -201,14 +201,14 @@ export default function HomePage() {
             >
               <Figura className="h-[72px] w-[72px]" />
               <h3 className="mb-3.5 mt-7 text-[26px] font-bold leading-tight tracking-[-0.02em]">
-                <Link href={ayuda.href} className="hover:text-ocre">
+                <Link href={ayuda.href} className="hover:text-acento">
                   {ayuda.title}
                 </Link>
               </h3>
               <p className="mb-6 text-gris-medio">{ayuda.text}</p>
               <Link
                 href={ayuda.href}
-                className="font-semibold underline underline-offset-4 hover:text-ocre"
+                className="font-semibold underline underline-offset-4 hover:text-acento"
               >
                 {ayuda.cta} <span aria-hidden="true">→</span>
               </Link>
@@ -229,7 +229,7 @@ export default function HomePage() {
               {paraTi.map((item) => (
                 <li key={item} className="flex gap-4">
                   <Check
-                    className="mt-0.5 h-[22px] w-[22px] flex-none text-ocre"
+                    className="mt-0.5 h-[22px] w-[22px] flex-none text-acento"
                     aria-hidden="true"
                   />
                   <span>{item}</span>

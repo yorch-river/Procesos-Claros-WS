@@ -20,7 +20,7 @@ function Bloque({ bloque }: { bloque: PostBlock }) {
             >
               <span
                 aria-hidden="true"
-                className="mt-[0.65em] h-2 w-2 flex-none bg-ocre"
+                className="mt-[0.65em] h-2 w-2 flex-none bg-acento"
               />
               <span>{item}</span>
             </li>
@@ -38,7 +38,7 @@ function Bloque({ bloque }: { bloque: PostBlock }) {
             >
               <span
                 aria-hidden="true"
-                className="w-7 flex-none text-[26px] font-bold leading-none tracking-[-0.03em] text-ocre"
+                className="w-7 flex-none text-[26px] font-bold leading-none tracking-[-0.03em] text-acento"
               >
                 {index + 1}
               </span>
@@ -53,7 +53,7 @@ function Bloque({ bloque }: { bloque: PostBlock }) {
         <blockquote className="my-12 border-y-2 border-tinta py-8">
           <span
             aria-hidden="true"
-            className="mb-2 block text-6xl font-bold leading-[0.6] text-ocre"
+            className="mb-2 block text-6xl font-bold leading-[0.6] text-acento"
           >
             “
           </span>

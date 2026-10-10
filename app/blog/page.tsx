@@ -63,7 +63,7 @@ export default function BlogPage() {
                 />
                 <div className="min-w-0 flex-[1_1_480px]">
                   <p className={`${rotulo} mb-3 flex flex-wrap gap-x-3`}>
-                    <span className="text-ocre">{post.category}</span>
+                    <span className="text-acento">{post.category}</span>
                     <span aria-hidden="true">/</span>
                     <time dateTime={post.datePublished}>
                       {formatDate(post.datePublished)}
@@ -72,7 +72,7 @@ export default function BlogPage() {
                     <span>{post.readingMinutes} min</span>
                   </p>
                   {/* H2 porque cuelga del H1 de la página de listado. */}
-                  <h2 className="mb-3 text-[clamp(1.5rem,2.6vw,2.25rem)] font-bold leading-tight tracking-[-0.025em] transition-colors group-hover:text-ocre">
+                  <h2 className="mb-3 text-[clamp(1.5rem,2.6vw,2.25rem)] font-bold leading-tight tracking-[-0.025em] transition-colors group-hover:text-acento">
                     {/* El enlace cubre toda la fila con un pseudo-elemento,
                         sin anidar el resto del contenido dentro del <a>. */}
                     <Link
@@ -88,7 +88,7 @@ export default function BlogPage() {
                 </div>
                 <span
                   aria-hidden="true"
-                  className="hidden self-center text-2xl text-ocre transition-transform group-hover:translate-x-1 md:block"
+                  className="hidden self-center text-2xl text-acento transition-transform group-hover:translate-x-1 md:block"
                 >
                   →
                 </span>
@@ -105,7 +105,7 @@ export default function BlogPage() {
           <FiguraSobre
             className="h-24 w-24 flex-none"
             trazo="#D8DADD"
-            acento="#F2A65A"
+            acento="#7FC4CC"
           />
           <div className="min-w-0 flex-[999_1_480px]">
             <p className="mb-4 font-mono text-[13px] text-[#A6AAB1]">
@@ -123,7 +123,7 @@ export default function BlogPage() {
               versión anterior: al enviarlo no ocurría nada. */}
           <Link
             href="/contacto"
-            className="inline-flex min-h-[56px] flex-none items-center gap-3 bg-white px-7 font-semibold text-tinta transition-colors hover:bg-ocre-claro"
+            className="inline-flex min-h-[56px] flex-none items-center gap-3 bg-white px-7 font-semibold text-tinta transition-colors hover:bg-acento-claro"
           >
             Quiero suscribirme <span aria-hidden="true">→</span>
           </Link>

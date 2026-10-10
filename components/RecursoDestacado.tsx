@@ -25,7 +25,7 @@ export default function RecursoDestacado({ className = "" }: { className?: strin
       </div>
       <Link
         href="/recursos"
-        className="inline-flex min-h-[54px] flex-none items-center gap-3 bg-tinta px-6 font-semibold text-white transition-colors hover:bg-ocre"
+        className="inline-flex min-h-[54px] flex-none items-center gap-3 bg-tinta px-6 font-semibold text-white transition-colors hover:bg-acento"
       >
         Descargar el test <span aria-hidden="true">→</span>
       </Link>

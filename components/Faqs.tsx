@@ -34,7 +34,7 @@ export default function Faqs({
                 {faq.question}
                 <span
                   aria-hidden="true"
-                  className="mt-0.5 flex-none text-2xl leading-none text-ocre transition-transform group-open:rotate-45"
+                  className="mt-0.5 flex-none text-2xl leading-none text-acento transition-transform group-open:rotate-45"
                 >
                   +
                 </span>

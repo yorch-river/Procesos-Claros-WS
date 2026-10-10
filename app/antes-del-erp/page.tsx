@@ -28,7 +28,7 @@ export const metadata = pageMetadata({
   path: "/antes-del-erp",
 });
 
-const OCRE_CLARO = "#F2A65A";
+const ACENTO_CLARO = "#7FC4CC";
 const TRAZO_OSCURO = "#D8DADD";
 
 /*
@@ -130,7 +130,7 @@ export default function BeforeErpPage() {
                 <Figura
                   className="mb-7 h-16 w-16"
                   trazo={TRAZO_OSCURO}
-                  acento={OCRE_CLARO}
+                  acento={ACENTO_CLARO}
                 />
                 <h3 className="mb-3 text-2xl font-bold leading-tight tracking-[-0.02em]">
                   {causa.titulo}
@@ -215,13 +215,13 @@ export default function BeforeErpPage() {
                   href={`/blog/${post.slug}`}
                   className="group flex flex-wrap items-baseline gap-x-10 gap-y-2 py-7"
                 >
-                  <span className="flex-[1_1_320px] text-2xl font-bold leading-tight tracking-[-0.02em] group-hover:text-ocre">
+                  <span className="flex-[1_1_320px] text-2xl font-bold leading-tight tracking-[-0.02em] group-hover:text-acento">
                     {post.title}
                   </span>
                   <span className="flex-[1.4_1_360px] text-gris-medio">
                     {post.excerpt}
                   </span>
-                  <span aria-hidden="true" className="text-xl text-ocre">
+                  <span aria-hidden="true" className="text-xl text-acento">
                     →
                   </span>
                 </Link>

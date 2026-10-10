@@ -32,7 +32,7 @@ export default function Navbar() {
               >
                 <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
                   <rect x="1" y="1" width="20" height="20" fill="none" stroke="#1A1C1F" strokeWidth="2" />
-                  <path d="M6 8h10M6 14h6" stroke="#B45309" strokeWidth="2" />
+                  <path d="M6 8h10M6 14h6" stroke="#0E5A66" strokeWidth="2" />
                 </svg>
                 Procesos Claros
                 <span className="sr-only">, inicio</span>
@@ -47,7 +47,7 @@ export default function Navbar() {
                   aria-current={isActive(link.path) ? "page" : undefined}
                   className={`${
                     isActive(link.path)
-                      ? "border-ocre text-tinta"
+                      ? "border-acento text-tinta"
                       : "border-transparent text-gris-medio hover:border-linea hover:text-tinta"
                   } inline-flex items-center border-b-2 px-1 pt-1 text-[15px] font-medium transition-colors`}
                 >
@@ -95,7 +95,7 @@ export default function Navbar() {
                     aria-current={isActive(link.path) ? "page" : undefined}
                     className={`${
                       isActive(link.path)
-                        ? "border-ocre bg-papel text-tinta"
+                        ? "border-acento bg-papel text-tinta"
                         : "border-transparent text-gris-medio hover:border-linea hover:bg-papel hover:text-tinta"
                     } block border-l-4 py-3 pl-3 pr-4 text-base font-medium`}
                   >

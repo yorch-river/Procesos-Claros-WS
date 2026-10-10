@@ -8,10 +8,10 @@ import { enviarContacto, type ContactState } from "@/app/contacto/actions";
 const estadoInicial: ContactState = { status: "idle" };
 
 const claseEtiqueta = "mb-2 block font-mono text-[13px] text-gris";
-// Campo recto con borde grafito; el foco se marca en ocre, igual que en el
+// Campo recto con borde grafito; el foco se marca en azul petróleo, igual que en el
 // resto del sitio.
 const claseCampo =
-  "w-full border-[1.5px] border-[#C9CBCF] bg-white px-4 py-3 text-lg outline-none transition-colors placeholder:text-[#8C9097] focus:border-tinta focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocre";
+  "w-full border-[1.5px] border-[#C9CBCF] bg-white px-4 py-3 text-lg outline-none transition-colors placeholder:text-[#8C9097] focus:border-tinta focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento";
 
 function BotonEnviar() {
   const { pending } = useFormStatus();
@@ -20,7 +20,7 @@ function BotonEnviar() {
     <button
       type="submit"
       disabled={pending}
-      className="flex min-h-[60px] w-full items-center justify-between gap-3 bg-ocre px-6 text-lg font-semibold text-white transition-colors hover:bg-ocre-oscuro disabled:cursor-not-allowed disabled:opacity-60"
+      className="flex min-h-[60px] w-full items-center justify-between gap-3 bg-acento px-6 text-lg font-semibold text-white transition-colors hover:bg-acento-oscuro disabled:cursor-not-allowed disabled:opacity-60"
     >
       {pending ? "Enviando…" : "Solicitar diagnóstico"}
       <span aria-hidden="true">→</span>
@@ -70,7 +70,7 @@ export default function ContactForm() {
         {state.status === "error" && (
           <p
             role="alert"
-            className="flex gap-3 border-[1.5px] border-ocre bg-white p-4 text-[15px] text-ocre-oscuro"
+            className="flex gap-3 border-[1.5px] border-acento bg-white p-4 text-[15px] text-acento-oscuro"
           >
             <span aria-hidden="true" className="font-bold">!</span>
             {state.message}

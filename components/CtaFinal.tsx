@@ -56,7 +56,7 @@ export default function CtaFinal({
           </figure>
           <Link
             href="/contacto"
-            className="inline-flex min-h-[60px] items-center justify-between gap-3 bg-ocre px-6 text-[17px] font-semibold text-white transition-colors hover:bg-ocre-oscuro"
+            className="inline-flex min-h-[60px] items-center justify-between gap-3 bg-acento px-6 text-[17px] font-semibold text-white transition-colors hover:bg-acento-oscuro"
           >
             {primaryLabel} <span aria-hidden="true">→</span>
           </Link>
