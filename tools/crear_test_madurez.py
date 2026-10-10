@@ -20,14 +20,14 @@ from openpyxl.worksheet.datavalidation import DataValidation
 SALIDA = sys.argv[1]
 
 TINTA = "1A1C1F"
-OCRE = "B45309"
+ACENTO = "0E5A66"
 GRIS = "5B6068"
 LINEA = "D5D7DA"
 PAPEL = "F3F3F1"
 ENTRADA = "FFF2CC"  # amarillo suave: celdas para completar
 VERDE_F = "E2EFDA"
 AMARILLO_F = "FFF2CC"
-OCRE_F = "F8D7C4"
+DEBIL_F = "F2D5D5"  # rosado suave: área débil
 
 F = "Arial"
 
@@ -124,7 +124,7 @@ guia["B2"].font = fuente(9, color=GRIS)
 guia["B4"] = "Test de madurez operativa"
 guia["B4"].font = fuente(22, bold=True)
 guia["B5"] = "¿Tu empresa está lista para implementar un ERP?"
-guia["B5"].font = fuente(13, color=OCRE, bold=True)
+guia["B5"].font = fuente(13, color=ACENTO, bold=True)
 
 texto = [
     ("Para qué sirve",
@@ -197,11 +197,11 @@ for etiqueta, valor in ejemplo:
     fila += 1
 
 fila += 1
-guia.cell(row=fila, column=2, value="¿Quieres revisar tu resultado con alguien?").font = fuente(11, bold=True, color=OCRE)
+guia.cell(row=fila, column=2, value="¿Quieres revisar tu resultado con alguien?").font = fuente(11, bold=True, color=ACENTO)
 fila += 1
 c = guia.cell(row=fila, column=2, value="Agenda un diagnóstico gratuito de 30 minutos en procesosclaros.cl/contacto")
 c.hyperlink = "https://www.procesosclaros.cl/contacto"
-c.font = Font(name=F, size=10, color=OCRE, underline="single")
+c.font = Font(name=F, size=10, color=ACENTO, underline="single")
 guia.merge_cells(start_row=fila, start_column=2, end_row=fila, end_column=3)
 
 # ---------------------------------------------------------------- Test
@@ -384,11 +384,11 @@ FIN = T + len(AREAS) - 1
 rango_estado = f"G{T}:G{FIN}"
 res.conditional_formatting.add(rango_estado, FormulaRule(formula=[f'G{T}="Sólida"'], fill=relleno(VERDE_F)))
 res.conditional_formatting.add(rango_estado, FormulaRule(formula=[f'G{T}="Intermedia"'], fill=relleno(AMARILLO_F)))
-res.conditional_formatting.add(rango_estado, FormulaRule(formula=[f'G{T}="Débil"'], fill=relleno(OCRE_F)))
+res.conditional_formatting.add(rango_estado, FormulaRule(formula=[f'G{T}="Débil"'], fill=relleno(DEBIL_F)))
 
 # Por dónde empezar
 P = FIN + 3
-res.cell(row=P, column=2, value="Por dónde empezar").font = fuente(12, bold=True, color=OCRE)
+res.cell(row=P, column=2, value="Por dónde empezar").font = fuente(12, bold=True, color=ACENTO)
 for j in (1, 2):
     r = P + j
     # Si el área que toca ya está sólida, no hay nada urgente que sugerir.
@@ -412,7 +412,7 @@ C = P + 4
 res.cell(row=C, column=2, value="¿Quieres revisar este resultado con alguien?").font = fuente(11, bold=True)
 c = res.cell(row=C + 1, column=2, value="Agenda un diagnóstico gratuito de 30 minutos → procesosclaros.cl/contacto")
 c.hyperlink = "https://www.procesosclaros.cl/contacto"
-c.font = Font(name=F, size=10, color=OCRE, underline="single")
+c.font = Font(name=F, size=10, color=ACENTO, underline="single")
 
 # Gráfico de madurez por área
 graf = BarChart()
@@ -431,8 +431,8 @@ cats = Reference(res, min_col=2, min_row=T, max_row=FIN)
 graf.add_data(datos, titles_from_data=False)
 graf.set_categories(cats)
 serie = graf.series[0]
-serie.graphicalProperties.solidFill = OCRE
-serie.graphicalProperties.line.solidFill = OCRE
+serie.graphicalProperties.solidFill = ACENTO
+serie.graphicalProperties.line.solidFill = ACENTO
 serie.dLbls = DataLabelList()
 serie.dLbls.showVal = True
 serie.dLbls.showSerName = False
@@ -457,7 +457,7 @@ guia.sheet_properties.pageSetUpPr.fitToPage = True
 guia.protection.sheet = True
 
 for ws in (guia, test, res):
-    ws.sheet_properties.tabColor = OCRE if ws is test else TINTA
+    ws.sheet_properties.tabColor = ACENTO if ws is test else TINTA
 
 wb.active = 0
 wb.properties.title = "Test de madurez operativa"

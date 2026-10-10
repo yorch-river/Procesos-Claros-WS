@@ -10,7 +10,7 @@ const estadoInicial: DescargaState = { status: "idle" };
 
 const claseEtiqueta = "mb-2 block font-mono text-[13px] text-gris";
 const claseCampo =
-  "w-full border-[1.5px] border-[#C9CBCF] bg-white px-4 py-3 text-lg outline-none transition-colors placeholder:text-[#8C9097] focus:border-tinta focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocre";
+  "w-full border-[1.5px] border-[#C9CBCF] bg-white px-4 py-3 text-lg outline-none transition-colors placeholder:text-[#8C9097] focus:border-tinta focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento";
 
 function BotonEnviar() {
   const { pending } = useFormStatus();
@@ -19,7 +19,7 @@ function BotonEnviar() {
     <button
       type="submit"
       disabled={pending}
-      className="flex min-h-[60px] w-full items-center justify-between gap-3 bg-ocre px-6 text-lg font-semibold text-white transition-colors hover:bg-ocre-oscuro disabled:cursor-not-allowed disabled:opacity-60"
+      className="flex min-h-[60px] w-full items-center justify-between gap-3 bg-acento px-6 text-lg font-semibold text-white transition-colors hover:bg-acento-oscuro disabled:cursor-not-allowed disabled:opacity-60"
     >
       {pending ? "Preparando…" : "Descargar el test"}
       <span aria-hidden="true">↓</span>
@@ -49,7 +49,7 @@ export default function DescargaForm({ recurso }: { recurso: Recurso }) {
         <a
           href={recurso.archivo}
           download={recurso.nombreArchivo}
-          className="flex min-h-[60px] items-center justify-between gap-3 bg-tinta px-6 text-lg font-semibold text-white transition-colors hover:bg-ocre"
+          className="flex min-h-[60px] items-center justify-between gap-3 bg-tinta px-6 text-lg font-semibold text-white transition-colors hover:bg-acento"
         >
           Descargar {recurso.titulo.toLowerCase()}
           <span aria-hidden="true">↓</span>
@@ -65,7 +65,7 @@ export default function DescargaForm({ recurso }: { recurso: Recurso }) {
         {state.status === "error" && (
           <p
             role="alert"
-            className="flex gap-3 border-[1.5px] border-ocre bg-white p-4 text-[15px] text-ocre-oscuro"
+            className="flex gap-3 border-[1.5px] border-acento bg-white p-4 text-[15px] text-acento-oscuro"
           >
             <span aria-hidden="true" className="font-bold">!</span>
             {state.message}

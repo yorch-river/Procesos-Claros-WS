@@ -31,7 +31,7 @@ export default function Breadcrumbs({ items }: { items: Crumb[] }) {
                   <>
                     <Link
                       href={crumb.path}
-                      className="underline-offset-4 transition-colors hover:text-ocre hover:underline"
+                      className="underline-offset-4 transition-colors hover:text-acento hover:underline"
                     >
                       {crumb.name}
                     </Link>

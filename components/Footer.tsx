@@ -33,7 +33,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/antes-del-erp"
-                  className="transition-colors hover:text-ocre-claro"
+                  className="transition-colors hover:text-acento-claro"
                 >
                   Antes del ERP
                 </Link>
@@ -41,7 +41,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/servicios"
-                  className="transition-colors hover:text-ocre-claro"
+                  className="transition-colors hover:text-acento-claro"
                 >
                   Servicios
                 </Link>
@@ -51,7 +51,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/blog"
-                  className="transition-colors hover:text-ocre-claro"
+                  className="transition-colors hover:text-acento-claro"
                 >
                   Blog
                 </Link>
@@ -59,7 +59,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/recursos"
-                  className="transition-colors hover:text-ocre-claro"
+                  className="transition-colors hover:text-acento-claro"
                 >
                   Test de madurez (Excel)
                 </Link>
@@ -67,7 +67,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/sobre-mi"
-                  className="transition-colors hover:text-ocre-claro"
+                  className="transition-colors hover:text-acento-claro"
                 >
                   Sobre Mí
                 </Link>
@@ -81,7 +81,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`mailto:${site.email}`}
-                  className="flex items-center gap-2 transition-colors hover:text-ocre-claro"
+                  className="flex items-center gap-2 transition-colors hover:text-acento-claro"
                 >
                   <Mail className="h-4 w-4" aria-hidden="true" />
                   {site.email}
@@ -92,7 +92,7 @@ export default function Footer() {
                   href={site.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 transition-colors hover:text-ocre-claro"
+                  className="flex items-center gap-2 transition-colors hover:text-acento-claro"
                 >
                   <Linkedin className="h-4 w-4" aria-hidden="true" />
                   LinkedIn
@@ -101,7 +101,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/contacto"
-                  className="underline transition-colors hover:text-ocre-claro"
+                  className="underline transition-colors hover:text-acento-claro"
                 >
                   Solicitar Diagnóstico
                 </Link>

@@ -44,7 +44,7 @@ export default function ContactoPage() {
                 <h2 className={`${rotulo} mb-1`}>Email directo</h2>
                 <a
                   href={`mailto:${site.email}`}
-                  className="text-lg font-semibold underline-offset-4 hover:text-ocre hover:underline"
+                  className="text-lg font-semibold underline-offset-4 hover:text-acento hover:underline"
                 >
                   {site.email}
                 </a>
@@ -58,7 +58,7 @@ export default function ContactoPage() {
                   href={site.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-lg font-semibold underline-offset-4 hover:text-ocre hover:underline"
+                  className="text-lg font-semibold underline-offset-4 hover:text-acento hover:underline"
                 >
                   linkedin.com/in/jriveradelvalle
                 </a>

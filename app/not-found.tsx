@@ -25,7 +25,7 @@ export default function NotFound() {
           <li key={link.path}>
             <Link
               href={link.path}
-              className="inline-flex min-h-[48px] items-center border-[1.5px] border-[#C9CBCF] px-5 font-semibold transition-colors hover:border-tinta hover:text-ocre"
+              className="inline-flex min-h-[48px] items-center border-[1.5px] border-[#C9CBCF] px-5 font-semibold transition-colors hover:border-tinta hover:text-acento"
             >
               {link.name}
             </Link>

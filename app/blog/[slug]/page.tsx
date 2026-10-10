@@ -89,7 +89,7 @@ export default async function PostPage({
               className="h-14 w-14 flex-none"
             />
             <p className={`${rotulo} flex flex-wrap gap-x-3`}>
-              <span className="text-ocre">{post.category}</span>
+              <span className="text-acento">{post.category}</span>
               <span aria-hidden="true">/</span>
               <time dateTime={post.datePublished}>
                 {formatDate(post.datePublished)}
@@ -120,7 +120,7 @@ export default async function PostPage({
                 Por{" "}
                 <Link
                   href="/sobre-mi"
-                  className="font-semibold text-tinta underline-offset-4 hover:text-ocre hover:underline"
+                  className="font-semibold text-tinta underline-offset-4 hover:text-acento hover:underline"
                 >
                   {site.founder.name}
                 </Link>
@@ -154,14 +154,14 @@ export default async function PostPage({
                       className="h-12 w-12 flex-none"
                     />
                     <span className="min-w-0 flex-[1_1_420px]">
-                      <span className="block text-2xl font-bold leading-tight tracking-[-0.02em] group-hover:text-ocre">
+                      <span className="block text-2xl font-bold leading-tight tracking-[-0.02em] group-hover:text-acento">
                         {related.title}
                       </span>
                       <span className="mt-2 block text-gris-medio">
                         {related.excerpt}
                       </span>
                     </span>
-                    <span aria-hidden="true" className="self-center text-xl text-ocre">
+                    <span aria-hidden="true" className="self-center text-xl text-acento">
                       →
                     </span>
                   </Link>
@@ -174,7 +174,7 @@ export default async function PostPage({
         <p className="mt-12">
           <Link
             href="/blog"
-            className="inline-flex min-h-[44px] items-center gap-2 font-semibold hover:text-ocre"
+            className="inline-flex min-h-[44px] items-center gap-2 font-semibold hover:text-acento"
           >
             <span aria-hidden="true">←</span>
             Volver a todos los artículos

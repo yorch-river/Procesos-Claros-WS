@@ -30,8 +30,8 @@ export default async function OpengraphImage() {
       >
         <div style={{ display: "flex", alignItems: "center", gap: 18, fontSize: 34, fontWeight: 700, letterSpacing: -1, color: "#ffffff" }}>
           <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", gap: 8, width: 40, height: 40, border: "3px solid #ffffff", padding: "0 8px" }}>
-            <div style={{ display: "flex", width: 20, height: 3, background: "#f2a65a" }} />
-            <div style={{ display: "flex", width: 12, height: 3, background: "#f2a65a" }} />
+            <div style={{ display: "flex", width: 20, height: 3, background: "#7fc4cc" }} />
+            <div style={{ display: "flex", width: 12, height: 3, background: "#7fc4cc" }} />
           </div>
           Procesos Claros
         </div>
@@ -49,7 +49,7 @@ export default async function OpengraphImage() {
             }}
           >
             Antes de implementar un ERP,{" "}
-            <span style={{ color: "#f2a65a" }}>ordena tu negocio.</span>
+            <span style={{ color: "#7fc4cc" }}>ordena tu negocio.</span>
           </div>
           <div style={{ display: "flex", marginTop: 28, fontSize: 30, color: "#a6aab1" }}>
             Consultoría independiente de procesos para pymes · Chile
@@ -57,7 +57,7 @@ export default async function OpengraphImage() {
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-          <div style={{ display: "flex", width: 80, height: 6, background: "#b45309" }} />
+          <div style={{ display: "flex", width: 80, height: 6, background: "#0e5a66" }} />
           <div style={{ display: "flex", fontSize: 26, color: "#d8dadd" }}>
             procesosclaros.cl
           </div>

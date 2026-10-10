@@ -93,11 +93,11 @@ export default function ServiciosPage() {
                   </h2>
                   <p className={`${rotulo} mb-3`}>El problema</p>
                   <p className="max-w-[520px] text-[22px] leading-snug">
-                    <span aria-hidden="true" className="text-ocre">
+                    <span aria-hidden="true" className="text-acento">
                       “
                     </span>
                     {servicio.problem}
-                    <span aria-hidden="true" className="text-ocre">
+                    <span aria-hidden="true" className="text-acento">
                       ”
                     </span>
                   </p>
@@ -114,7 +114,7 @@ export default function ServiciosPage() {
                       >
                         <span
                           aria-hidden="true"
-                          className="mt-[0.6em] h-2 w-2 flex-none bg-ocre"
+                          className="mt-[0.6em] h-2 w-2 flex-none bg-acento"
                         />
                         {item}
                       </li>

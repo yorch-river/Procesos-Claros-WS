@@ -6,8 +6,8 @@
  */
 
 const TINTA = "#1A1C1F";
-const OCRE = "#B45309";
-const OCRE_CLARO = "#F2A65A";
+const ACENTO = "#0E5A66";
+const ACENTO_CLARO = "#7FC4CC";
 const GRIS_LINEA = "#8C9097";
 
 type FiguraProps = { className?: string };
@@ -64,7 +64,7 @@ export function EsquemaDesorden({ className }: FiguraProps) {
           cy="80"
           r="36"
           fill="#FFFFFF"
-          stroke={OCRE}
+          stroke={ACENTO}
           strokeWidth="1.4"
           strokeDasharray="4 3"
         />
@@ -89,7 +89,7 @@ export function EsquemaDesorden({ className }: FiguraProps) {
         <rect x="912" y="100" width="82" height="50" fill={TINTA} />
         <text x="953" y="130" fill="#FFFFFF">Factura</text>
       </g>
-      <g stroke={OCRE} strokeWidth="1.8" fill="none">
+      <g stroke={ACENTO} strokeWidth="1.8" fill="none">
         <path d="M678 125 H 698" />
         <path d="M693 121 L698 125 L693 129" />
         <path d="M790 125 H 810" />
@@ -118,7 +118,7 @@ function FiguraOscura({ children, className }: FiguraProps & { children: React.R
     <svg
       viewBox="0 0 48 48"
       fill="none"
-      stroke={OCRE_CLARO}
+      stroke={ACENTO_CLARO}
       strokeWidth="1.6"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -193,7 +193,7 @@ export function FiguraDiagnostico({ className }: FiguraProps) {
     <FiguraClara className={className}>
       <circle cx="19" cy="19" r="13" />
       <path d="M28.5 28.5 L43 43" strokeWidth="3" />
-      <path d="M10 21 C 12 12, 18 28, 16 18 S 24 14, 22 22 S 27 24, 28 17" stroke={OCRE} />
+      <path d="M10 21 C 12 12, 18 28, 16 18 S 24 14, 22 22 S 27 24, 28 17" stroke={ACENTO} />
     </FiguraClara>
   );
 }
@@ -203,7 +203,7 @@ export function FiguraSistematizacion({ className }: FiguraProps) {
   return (
     <FiguraClara className={className}>
       <rect x="17" y="3" width="14" height="10" />
-      <path d="M24 13v7M11 20h26M11 20v8M37 20v8" stroke={OCRE} />
+      <path d="M24 13v7M11 20h26M11 20v8M37 20v8" stroke={ACENTO} />
       <rect x="3" y="28" width="16" height="16" />
       <rect x="29" y="28" width="16" height="16" />
       <circle cx="11" cy="34" r="2.5" />
@@ -221,7 +221,7 @@ export function FiguraPreparacion({ className }: FiguraProps) {
       <rect x="16" y="6" width="29" height="21" />
       <path d="M30.5 27v6M24 33h13" />
       <rect x="3" y="18" width="18" height="26" fill="#FFFFFF" />
-      <path d="M7 25l1.5 1.5 3-3M7 32l1.5 1.5 3-3M7 39l1.5 1.5 3-3" stroke={OCRE} />
+      <path d="M7 25l1.5 1.5 3-3M7 32l1.5 1.5 3-3M7 39l1.5 1.5 3-3" stroke={ACENTO} />
       <path d="M14 25.5h4M14 32.5h4M14 39.5h4" />
     </FiguraClara>
   );
@@ -231,7 +231,7 @@ export function FiguraPreparacion({ className }: FiguraProps) {
  * Figuras de las páginas interiores.
  *
  * Todas comparten la misma gramática: trazo fino en grafito y un solo
- * detalle en ocre que carga la idea. Sobre fondo oscuro se pasan otros
+ * detalle en azul petróleo que carga la idea. Sobre fondo oscuro se pasan otros
  * colores con `trazo` y `acento`.
  * ==================================================================== */
 
@@ -265,7 +265,7 @@ function Lienzo({
 /* ---- Antes del ERP ---- */
 
 /** Un sistema recién instalado: la ventana existe, el contenido no. */
-export function FiguraCascaraVacia({ className, trazo, acento = OCRE }: FiguraColorProps) {
+export function FiguraCascaraVacia({ className, trazo, acento = ACENTO }: FiguraColorProps) {
   return (
     <Lienzo className={className} trazo={trazo}>
       <rect x="4" y="7" width="40" height="34" />
@@ -283,7 +283,7 @@ export function FiguraCascaraVacia({ className, trazo, acento = OCRE }: FiguraCo
 }
 
 /** "Depende de quién lo haga": una entrada, tres salidas distintas. */
-export function FiguraDepende({ className, trazo, acento = OCRE }: FiguraColorProps) {
+export function FiguraDepende({ className, trazo, acento = ACENTO }: FiguraColorProps) {
   return (
     <Lienzo className={className} trazo={trazo}>
       <circle cx="7" cy="24" r="3.5" />
@@ -300,7 +300,7 @@ export function FiguraDepende({ className, trazo, acento = OCRE }: FiguraColorPr
 }
 
 /** El cambio empuja; el equipo pone el hombro en contra. */
-export function FiguraResistencia({ className, trazo, acento = OCRE }: FiguraColorProps) {
+export function FiguraResistencia({ className, trazo, acento = ACENTO }: FiguraColorProps) {
   return (
     <Lienzo className={className} trazo={trazo}>
       <g stroke={acento} strokeWidth="2">
@@ -315,7 +315,7 @@ export function FiguraResistencia({ className, trazo, acento = OCRE }: FiguraCol
 }
 
 /** Tres caminos distintos para llegar al mismo punto. */
-export function FiguraCaminos({ className, trazo, acento = OCRE }: FiguraColorProps) {
+export function FiguraCaminos({ className, trazo, acento = ACENTO }: FiguraColorProps) {
   return (
     <Lienzo className={className} trazo={trazo}>
       <rect x="2" y="20" width="8" height="8" />
@@ -330,7 +330,7 @@ export function FiguraCaminos({ className, trazo, acento = OCRE }: FiguraColorPr
 }
 
 /** Copias de la misma planilla, cada una con su versión. */
-export function FiguraPlanillas({ className, trazo, acento = OCRE }: FiguraColorProps) {
+export function FiguraPlanillas({ className, trazo, acento = ACENTO }: FiguraColorProps) {
   return (
     <Lienzo className={className} trazo={trazo}>
       <g stroke={acento} strokeDasharray="2.5 2">
@@ -344,7 +344,7 @@ export function FiguraPlanillas({ className, trazo, acento = OCRE }: FiguraColor
 }
 
 /** Un pedido al final de un camino que nadie dibujó. */
-export function FiguraPedidoPerdido({ className, trazo, acento = OCRE }: FiguraColorProps) {
+export function FiguraPedidoPerdido({ className, trazo, acento = ACENTO }: FiguraColorProps) {
   return (
     <Lienzo className={className} trazo={trazo}>
       <path
@@ -360,7 +360,7 @@ export function FiguraPedidoPerdido({ className, trazo, acento = OCRE }: FiguraC
 }
 
 /** El cliente es el que avisa del error. */
-export function FiguraQueja({ className, trazo, acento = OCRE }: FiguraColorProps) {
+export function FiguraQueja({ className, trazo, acento = ACENTO }: FiguraColorProps) {
   return (
     <Lienzo className={className} trazo={trazo}>
       <path d="M18 5 H 44 V 25 H 28 L 21 31 V 25 H 18 Z" />
@@ -373,7 +373,7 @@ export function FiguraQueja({ className, trazo, acento = OCRE }: FiguraColorProp
 }
 
 /** Todo el proceso vive en la cabeza de una persona. */
-export function FiguraCabeza({ className, trazo, acento = OCRE }: FiguraColorProps) {
+export function FiguraCabeza({ className, trazo, acento = ACENTO }: FiguraColorProps) {
   return (
     <Lienzo className={className} trazo={trazo}>
       <path d="M14 44 V 36 C 9 33, 6 28, 6 21 C 6 11, 13 4, 23 4 C 33 4, 39 11, 39 19 L 43 27 L 39 28 V 33 C 39 35, 37 36, 35 36 H 30 V 44" />
@@ -386,7 +386,7 @@ export function FiguraCabeza({ className, trazo, acento = OCRE }: FiguraColorPro
 }
 
 /** Un sistema que ya junta telarañas. */
-export function FiguraSistemaAbandonado({ className, trazo, acento = OCRE }: FiguraColorProps) {
+export function FiguraSistemaAbandonado({ className, trazo, acento = ACENTO }: FiguraColorProps) {
   return (
     <Lienzo className={className} trazo={trazo}>
       <rect x="4" y="6" width="40" height="28" />
@@ -402,7 +402,7 @@ export function FiguraSistemaAbandonado({ className, trazo, acento = OCRE }: Fig
 }
 
 /** Del cliente que entra al cobro, pasando por cada etapa. */
-export function FiguraMapaProcesos({ className, trazo, acento = OCRE }: FiguraColorProps) {
+export function FiguraMapaProcesos({ className, trazo, acento = ACENTO }: FiguraColorProps) {
   return (
     <Lienzo className={className} trazo={trazo}>
       <circle cx="7" cy="8" r="3.5" />
@@ -422,7 +422,7 @@ export function FiguraMapaProcesos({ className, trazo, acento = OCRE }: FiguraCo
 }
 
 /** El camino normal y el desvío para cuando algo sale mal. */
-export function FiguraExcepcion({ className, trazo, acento = OCRE }: FiguraColorProps) {
+export function FiguraExcepcion({ className, trazo, acento = ACENTO }: FiguraColorProps) {
   return (
     <Lienzo className={className} trazo={trazo}>
       <path d="M3 16 H 17 M31 16 H 45" />
@@ -439,7 +439,7 @@ export function FiguraExcepcion({ className, trazo, acento = OCRE }: FiguraColor
 }
 
 /** Peldaños: la disciplina que exige un sistema se sube de a poco. */
-export function FiguraMadurez({ className, trazo, acento = OCRE }: FiguraColorProps) {
+export function FiguraMadurez({ className, trazo, acento = ACENTO }: FiguraColorProps) {
   return (
     <Lienzo className={className} trazo={trazo}>
       <path d="M3 44 H 13 V 34 H 23 V 24 H 33 V 14 H 45" />
@@ -455,7 +455,7 @@ export function FiguraMadurez({ className, trazo, acento = OCRE }: FiguraColorPr
 /* ---- Blog ---- */
 
 /** Guía: una brújula. */
-export function FiguraBrujula({ className, trazo, acento = OCRE }: FiguraColorProps) {
+export function FiguraBrujula({ className, trazo, acento = ACENTO }: FiguraColorProps) {
   return (
     <Lienzo className={className} trazo={trazo}>
       <circle cx="24" cy="24" r="19" />
@@ -467,7 +467,7 @@ export function FiguraBrujula({ className, trazo, acento = OCRE }: FiguraColorPr
 }
 
 /** Opinión: una conversación. */
-export function FiguraConversacion({ className, trazo, acento = OCRE }: FiguraColorProps) {
+export function FiguraConversacion({ className, trazo, acento = ACENTO }: FiguraColorProps) {
   return (
     <Lienzo className={className} trazo={trazo}>
       <path d="M4 6 H 30 V 24 H 14 L 8 30 V 24 H 4 Z" />
@@ -478,7 +478,7 @@ export function FiguraConversacion({ className, trazo, acento = OCRE }: FiguraCo
 }
 
 /** Estrategia: una ruta con hitos hasta la meta. */
-export function FiguraRuta({ className, trazo, acento = OCRE }: FiguraColorProps) {
+export function FiguraRuta({ className, trazo, acento = ACENTO }: FiguraColorProps) {
   return (
     <Lienzo className={className} trazo={trazo}>
       <path d="M6 42 C 6 30, 24 34, 22 24 S 30 12, 38 14" strokeDasharray="2.5 2.5" />
@@ -493,7 +493,7 @@ export function FiguraRuta({ className, trazo, acento = OCRE }: FiguraColorProps
 }
 
 /** Tecnología: una pantalla con código. */
-export function FiguraTecnologia({ className, trazo, acento = OCRE }: FiguraColorProps) {
+export function FiguraTecnologia({ className, trazo, acento = ACENTO }: FiguraColorProps) {
   return (
     <Lienzo className={className} trazo={trazo}>
       <rect x="4" y="7" width="40" height="27" />
@@ -508,7 +508,7 @@ export function FiguraTecnologia({ className, trazo, acento = OCRE }: FiguraColo
 }
 
 /** Gestión: un tablero con tareas cerradas y una pendiente. */
-export function FiguraGestion({ className, trazo, acento = OCRE }: FiguraColorProps) {
+export function FiguraGestion({ className, trazo, acento = ACENTO }: FiguraColorProps) {
   return (
     <Lienzo className={className} trazo={trazo}>
       <rect x="9" y="6" width="30" height="38" />
@@ -524,7 +524,7 @@ export function FiguraGestion({ className, trazo, acento = OCRE }: FiguraColorPr
 }
 
 /** Un sobre del que asoma una carta escrita. */
-export function FiguraSobre({ className, trazo, acento = OCRE }: FiguraColorProps) {
+export function FiguraSobre({ className, trazo, acento = ACENTO }: FiguraColorProps) {
   return (
     <Lienzo className={className} trazo={trazo}>
       <path d="M12 22 V 4 H 36 V 22" stroke={acento} />
@@ -536,7 +536,7 @@ export function FiguraSobre({ className, trazo, acento = OCRE }: FiguraColorProp
 }
 
 /** Una nota fijada: el dato que conviene recordar. */
-export function FiguraNota({ className, trazo, acento = OCRE }: FiguraColorProps) {
+export function FiguraNota({ className, trazo, acento = ACENTO }: FiguraColorProps) {
   return (
     <Lienzo className={className} trazo={trazo}>
       <path d="M6 8 H 42 V 32 L 30 44 H 6 Z" />
@@ -550,7 +550,7 @@ export function FiguraNota({ className, trazo, acento = OCRE }: FiguraColorProps
 /* ---- Sobre mí ---- */
 
 /** Independencia: una balanza que no se inclina por ninguna marca. */
-export function FiguraBalanza({ className, trazo, acento = OCRE }: FiguraColorProps) {
+export function FiguraBalanza({ className, trazo, acento = ACENTO }: FiguraColorProps) {
   return (
     <Lienzo className={className} trazo={trazo}>
       <path d="M24 6 V 42 M16 42 H 32" />
@@ -563,7 +563,7 @@ export function FiguraBalanza({ className, trazo, acento = OCRE }: FiguraColorPr
 }
 
 /** Enfoque en negocio: una flecha al centro. */
-export function FiguraDiana({ className, trazo, acento = OCRE }: FiguraColorProps) {
+export function FiguraDiana({ className, trazo, acento = ACENTO }: FiguraColorProps) {
   return (
     <Lienzo className={className} trazo={trazo}>
       <circle cx="22" cy="26" r="18" />
@@ -578,7 +578,7 @@ export function FiguraDiana({ className, trazo, acento = OCRE }: FiguraColorProp
 }
 
 /** Distribución: un camión de reparto. */
-export function FiguraDistribucion({ className, trazo, acento = OCRE }: FiguraColorProps) {
+export function FiguraDistribucion({ className, trazo, acento = ACENTO }: FiguraColorProps) {
   return (
     <Lienzo className={className} trazo={trazo}>
       <path d="M3 12 H 29 V 34 H 3 Z" />
@@ -591,7 +591,7 @@ export function FiguraDistribucion({ className, trazo, acento = OCRE }: FiguraCo
 }
 
 /** Servicios: dos personas resolviendo algo juntas. */
-export function FiguraServiciosPersonas({ className, trazo, acento = OCRE }: FiguraColorProps) {
+export function FiguraServiciosPersonas({ className, trazo, acento = ACENTO }: FiguraColorProps) {
   return (
     <Lienzo className={className} trazo={trazo}>
       <circle cx="12" cy="24" r="4.5" />
@@ -604,7 +604,7 @@ export function FiguraServiciosPersonas({ className, trazo, acento = OCRE }: Fig
 }
 
 /** Pequeña industria: una nave con techo de sierra. */
-export function FiguraIndustria({ className, trazo, acento = OCRE }: FiguraColorProps) {
+export function FiguraIndustria({ className, trazo, acento = ACENTO }: FiguraColorProps) {
   return (
     <Lienzo className={className} trazo={trazo}>
       <path d="M3 44 V 24 L 13 17 V 24 L 23 17 V 24 L 33 17 V 44 Z" />
@@ -621,7 +621,7 @@ export function FiguraIndustria({ className, trazo, acento = OCRE }: FiguraColor
 /* ---- Contacto ---- */
 
 /** Un sobre cerrado. */
-export function FiguraCorreo({ className, trazo, acento = OCRE }: FiguraColorProps) {
+export function FiguraCorreo({ className, trazo, acento = ACENTO }: FiguraColorProps) {
   return (
     <Lienzo className={className} trazo={trazo}>
       <rect x="4" y="10" width="40" height="28" />
@@ -631,7 +631,7 @@ export function FiguraCorreo({ className, trazo, acento = OCRE }: FiguraColorPro
 }
 
 /** Una ficha profesional. */
-export function FiguraPerfil({ className, trazo, acento = OCRE }: FiguraColorProps) {
+export function FiguraPerfil({ className, trazo, acento = ACENTO }: FiguraColorProps) {
   return (
     <Lienzo className={className} trazo={trazo}>
       <rect x="4" y="9" width="40" height="30" />
@@ -643,7 +643,7 @@ export function FiguraPerfil({ className, trazo, acento = OCRE }: FiguraColorPro
 }
 
 /** Media hora de reloj: el diagnóstico dura 30 minutos. */
-export function FiguraTreintaMinutos({ className, trazo, acento = OCRE }: FiguraColorProps) {
+export function FiguraTreintaMinutos({ className, trazo, acento = ACENTO }: FiguraColorProps) {
   return (
     <Lienzo className={className} trazo={trazo}>
       <path d="M24 7 A 17 17 0 0 1 24 41 Z" fill={acento} stroke="none" opacity="0.18" />
@@ -656,7 +656,7 @@ export function FiguraTreintaMinutos({ className, trazo, acento = OCRE }: Figura
 }
 
 /** Un enredo que termina en una línea recta y un visto bueno. */
-export function FiguraDesenredo({ className, trazo, acento = OCRE }: FiguraColorProps) {
+export function FiguraDesenredo({ className, trazo, acento = ACENTO }: FiguraColorProps) {
   return (
     <Lienzo className={className} trazo={trazo}>
       <path d="M3 24 C 6 12, 14 34, 10 20 S 4 30, 14 28 S 20 16, 18 24 S 22 26, 26 24 H 32" />
@@ -668,7 +668,7 @@ export function FiguraDesenredo({ className, trazo, acento = OCRE }: FiguraColor
 /* ---- 404 ---- */
 
 /** Un camino que se corta antes de llegar. */
-export function FiguraCaminoRoto({ className, trazo, acento = OCRE }: FiguraColorProps) {
+export function FiguraCaminoRoto({ className, trazo, acento = ACENTO }: FiguraColorProps) {
   return (
     <Lienzo className={className} trazo={trazo}>
       <circle cx="6" cy="24" r="3" />
@@ -684,7 +684,7 @@ export function FiguraCaminoRoto({ className, trazo, acento = OCRE }: FiguraColo
 /* ---- Recursos ---- */
 
 /** El test: una planilla con respuestas y un medidor de madurez. */
-export function FiguraTestMadurez({ className, trazo, acento = OCRE }: FiguraColorProps) {
+export function FiguraTestMadurez({ className, trazo, acento = ACENTO }: FiguraColorProps) {
   return (
     <Lienzo className={className} trazo={trazo}>
       <rect x="3" y="4" width="28" height="36" />

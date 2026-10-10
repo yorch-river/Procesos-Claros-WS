@@ -17,10 +17,10 @@ export const tituloSeccion =
   "text-[clamp(1.75rem,3vw,2.5rem)] font-bold leading-[1.12] tracking-[-0.018em]";
 
 export const botonPrimario =
-  "inline-flex min-h-[54px] items-center gap-3 bg-tinta px-6 font-semibold text-white transition-colors hover:bg-ocre";
+  "inline-flex min-h-[54px] items-center gap-3 bg-tinta px-6 font-semibold text-white transition-colors hover:bg-acento";
 
 export const botonSecundario =
   "inline-flex min-h-[54px] items-center border-[1.5px] border-[#C9CBCF] px-6 font-semibold transition-colors hover:border-tinta";
 
 export const enlaceSubrayado =
-  "font-semibold underline underline-offset-4 hover:text-ocre";
+  "font-semibold underline underline-offset-4 hover:text-acento";
