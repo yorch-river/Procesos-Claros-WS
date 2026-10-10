@@ -39,7 +39,7 @@ export default function Navbar() {
               </Link>
             </div>
 
-            <div className="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+            <div className="hidden lg:ml-6 lg:flex lg:items-center lg:space-x-7">
               {navigation.map((link) => (
                 <Link
                   key={link.path}
@@ -62,7 +62,7 @@ export default function Navbar() {
               </Link>
             </div>
 
-            <div className="-mr-2 flex items-center md:hidden">
+            <div className="-mr-2 flex items-center lg:hidden">
               <button
                 type="button"
                 onClick={() => setIsOpen(!isOpen)}
@@ -84,7 +84,7 @@ export default function Navbar() {
         {isOpen && (
           <div
             id="menu-movil"
-            className="border-b border-linea bg-white md:hidden"
+            className="border-b border-linea bg-white lg:hidden"
           >
             <ul className="space-y-1 pb-3 pt-2">
               {navigation.map((link) => (

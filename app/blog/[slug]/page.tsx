@@ -7,6 +7,7 @@ import Faqs from "@/components/Faqs";
 import FiguraCategoria from "@/components/FiguraCategoria";
 import JsonLd from "@/components/JsonLd";
 import PostBody from "@/components/PostBody";
+import RecursoDestacado from "@/components/RecursoDestacado";
 import { pageMetadata } from "@/lib/seo";
 import { articleSchema } from "@/lib/schema";
 import { site } from "@/lib/site";
@@ -134,6 +135,8 @@ export default async function PostPage({
 
           {post.faqs && <Faqs faqs={post.faqs} />}
         </div>
+
+        <RecursoDestacado className="mt-20" />
 
         {relacionados.length > 0 && (
           <section className="mt-20">
