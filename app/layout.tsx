@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { IBM_Plex_Mono, Schibsted_Grotesk } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
@@ -8,14 +8,22 @@ import { site } from "@/lib/site";
 import "./globals.css";
 
 /*
- * next/font descarga Inter en el build y la sirve desde nuestro dominio, con
- * el `@font-face` ya incrustado en el CSS. Reemplaza al <link> a Google Fonts,
- * que agregaba dos conexiones externas al camino crítico del render.
+ * next/font descarga las fuentes en el build y las sirve desde nuestro
+ * dominio, con el `@font-face` ya incrustado en el CSS. Reemplaza al <link> a
+ * Google Fonts, que agregaba dos conexiones externas al camino crítico.
  */
-const inter = Inter({
+const grotesk = Schibsted_Grotesk({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-inter",
+  variable: "--font-grotesk",
+});
+
+// Solo para etiquetas y rótulos cortos: dos pesos bastan.
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
+  variable: "--font-plex-mono",
 });
 
 export const metadata: Metadata = {
@@ -56,7 +64,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#2563eb",
+  themeColor: "#1a1c1f",
   width: "device-width",
   initialScale: 1,
 };
@@ -65,8 +73,8 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang={site.lang} className={inter.variable}>
-      <body className="bg-slate-50 text-slate-900 antialiased">
+    <html lang={site.lang} className={`${grotesk.variable} ${plexMono.variable}`}>
+      <body className="bg-white text-tinta antialiased">
         {/* Entidades globales: se declaran una vez y el resto del sitio las
             referencia por @id, en vez de repetirlas en cada página. */}
         <JsonLd data={organizationSchema()} />
@@ -75,7 +83,7 @@ export default function RootLayout({
 
         <a
           href="#contenido"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-blue-600 focus:px-4 focus:py-2 focus:font-semibold focus:text-white"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:bg-tinta focus:px-4 focus:py-2 focus:font-semibold focus:text-white"
         >
           Saltar al contenido
         </a>

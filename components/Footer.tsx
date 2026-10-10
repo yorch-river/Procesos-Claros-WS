@@ -13,14 +13,14 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-900 pb-8 pt-16 text-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <footer className="bg-tinta pb-8 pt-16 text-white">
+      <div className="mx-auto max-w-[1320px] px-5 sm:px-8 lg:px-[60px]">
         <div className="mb-12 grid grid-cols-1 gap-12 md:grid-cols-4">
           <div className="col-span-1 md:col-span-2">
-            <span className="mb-6 block text-2xl font-bold tracking-tight text-white">
-              PROCESOS<span className="text-blue-400">CLAROS</span>
+            <span className="mb-6 block text-2xl font-bold tracking-[-0.01em] text-white">
+              Procesos Claros
             </span>
-            <p className="mb-6 max-w-sm text-slate-400">
+            <p className="mb-6 max-w-sm text-[#A6AAB1]">
               Consultoría independiente enfocada en ordenar y sistematizar pymes
               antes de su transformación digital. Ayudamos a dueños de negocio a
               recuperar el control.
@@ -28,12 +28,12 @@ export default function Footer() {
           </div>
 
           <div>
-            <h2 className="mb-6 text-lg font-semibold">Enlaces</h2>
-            <ul className="space-y-4 text-slate-400">
+            <h2 className="mb-6 font-mono text-[13px] font-normal uppercase tracking-wide text-[#A6AAB1]">Enlaces</h2>
+            <ul className="space-y-4 text-[#A6AAB1]">
               <li>
                 <Link
                   href="/antes-del-erp"
-                  className="transition-colors hover:text-blue-400"
+                  className="transition-colors hover:text-ocre-claro"
                 >
                   Antes del ERP
                 </Link>
@@ -41,7 +41,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/servicios"
-                  className="transition-colors hover:text-blue-400"
+                  className="transition-colors hover:text-ocre-claro"
                 >
                   Servicios
                 </Link>
@@ -51,7 +51,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/blog"
-                  className="transition-colors hover:text-blue-400"
+                  className="transition-colors hover:text-ocre-claro"
                 >
                   Recursos / Blog
                 </Link>
@@ -59,7 +59,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/sobre-mi"
-                  className="transition-colors hover:text-blue-400"
+                  className="transition-colors hover:text-ocre-claro"
                 >
                   Sobre Mí
                 </Link>
@@ -68,12 +68,12 @@ export default function Footer() {
           </div>
 
           <div>
-            <h2 className="mb-6 text-lg font-semibold">Contacto</h2>
-            <ul className="space-y-4 text-slate-400">
+            <h2 className="mb-6 font-mono text-[13px] font-normal uppercase tracking-wide text-[#A6AAB1]">Contacto</h2>
+            <ul className="space-y-4 text-[#A6AAB1]">
               <li>
                 <a
                   href={`mailto:${site.email}`}
-                  className="flex items-center gap-2 transition-colors hover:text-blue-400"
+                  className="flex items-center gap-2 transition-colors hover:text-ocre-claro"
                 >
                   <Mail className="h-4 w-4" aria-hidden="true" />
                   {site.email}
@@ -84,7 +84,7 @@ export default function Footer() {
                   href={site.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 transition-colors hover:text-blue-400"
+                  className="flex items-center gap-2 transition-colors hover:text-ocre-claro"
                 >
                   <Linkedin className="h-4 w-4" aria-hidden="true" />
                   LinkedIn
@@ -93,7 +93,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/contacto"
-                  className="underline transition-colors hover:text-blue-400"
+                  className="underline transition-colors hover:text-ocre-claro"
                 >
                   Solicitar Diagnóstico
                 </Link>
@@ -102,7 +102,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-slate-800 pt-8 text-center text-sm text-slate-500">
+        <div className="border-t border-[#3A3D42] pt-8 text-center text-sm text-[#8C9097]">
           <p>
             © {year} {site.name}. Consultoría Independiente para Pymes.
           </p>

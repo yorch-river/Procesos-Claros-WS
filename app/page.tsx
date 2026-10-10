@@ -1,9 +1,19 @@
+import Image from "next/image";
 import Link from "next/link";
-import { AlertTriangle, Check, X, Search, ClipboardCheck, ShieldCheck } from "lucide-react";
+import { Check, X } from "lucide-react";
 import JsonLd from "@/components/JsonLd";
-import CtaFinal from "@/components/CtaFinal";
+import {
+  EsquemaDesorden,
+  FiguraAutomatiza,
+  FiguraDiagnostico,
+  FiguraEstructura,
+  FiguraExcel,
+  FiguraPreparacion,
+  FiguraSistematizacion,
+} from "@/components/home/Figuras";
 import { pageMetadata } from "@/lib/seo";
 import { serviceSchema } from "@/lib/schema";
+import { site } from "@/lib/site";
 import { servicios } from "@/content/servicios";
 
 export const metadata = pageMetadata({
@@ -13,30 +23,46 @@ export const metadata = pageMetadata({
   path: "/",
 });
 
+// Cada advertencia lleva su propia figura: repetir el mismo ícono de alerta
+// tres veces no decía nada distinto en cada punto.
 const problemas = [
-  "Un ERP no soluciona procesos confusos; los automatiza. Automatizar el desorden solo amplifica los errores.",
-  "La mayoría de las implementaciones de software fallan no por la tecnología, sino por la falta de estructura previa.",
-  "Si tu equipo hoy depende de Excel y la memoria de “el que sabe”, un software nuevo será una pesadilla de implementación.",
+  {
+    figura: FiguraAutomatiza,
+    text: "Un ERP no soluciona procesos confusos; los automatiza. Automatizar el desorden solo amplifica los errores.",
+  },
+  {
+    figura: FiguraEstructura,
+    text: "La mayoría de las implementaciones de software fallan no por la tecnología, sino por la falta de estructura previa.",
+  },
+  {
+    figura: FiguraExcel,
+    text: "Si tu equipo hoy depende de Excel y la memoria de “el que sabe”, un software nuevo será una pesadilla de implementación.",
+  },
 ];
 
+// Se presentan como columnas independientes, no como pasos: cada servicio se
+// puede contratar sin haber hecho el anterior.
 const ayudas = [
   {
-    icon: Search,
+    figura: FiguraDiagnostico,
     title: "Diagnóstico de madurez",
     text: "Evaluamos objetivamente si tu empresa está lista para un sistema o si el caos operativo hará fracasar cualquier intento.",
     href: "/servicios#diagnostico",
+    cta: "Ver el diagnóstico",
   },
   {
-    icon: ClipboardCheck,
+    figura: FiguraSistematizacion,
     title: "Sistematización de procesos",
     text: "Definimos quién hace qué, cuándo y cómo. Creamos la base de reglas de negocio que el software deberá seguir después.",
     href: "/servicios#sistematizacion",
+    cta: "Ver la sistematización",
   },
   {
-    icon: ShieldCheck,
+    figura: FiguraPreparacion,
     title: "Preparación para digitalizar",
     text: "Te acompañamos a definir tus requerimientos reales para que no compres un software que te sobre (o te falte).",
     href: "/servicios#preparacion-erp",
+    cta: "Ver la preparación",
   },
 ];
 
@@ -54,6 +80,9 @@ const noParaTi = [
   "Quieres “la solución mágica” sin documentar cómo trabaja tu empresa.",
 ];
 
+const contenedor = "mx-auto max-w-[1320px] px-5 sm:px-8 lg:px-[60px]";
+const rotulo = "font-mono text-[13px] tracking-wide text-gris";
+
 export default function HomePage() {
   return (
     <>
@@ -68,151 +97,218 @@ export default function HomePage() {
         />
       ))}
 
-      <section className="relative overflow-hidden bg-white pb-32 pt-24">
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl text-center">
-            {/* Único H1 de la página: contiene la promesa central y la
-                palabra clave por la que queremos rankear. */}
-            <h1 className="mb-8 text-4xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-6xl">
-              Antes de implementar un ERP,{" "}
-              <span className="text-blue-600">ordena tu negocio.</span>
-            </h1>
-            <p className="mx-auto mb-10 max-w-2xl text-xl leading-relaxed text-slate-600">
-              Muchas pymes creen que necesitan un sistema. En realidad necesitan
-              procesos claros. Evita que la tecnología solo acelere tu desorden
-              actual.
+      {/* Hero */}
+      <section className={`${contenedor} pt-14 sm:pt-20 lg:pt-28`}>
+        <p className={`${rotulo} mb-7`}>
+          [ Consultoría independiente · Pymes · Chile ]
+        </p>
+        {/* Único H1 de la página: contiene la promesa central y la
+            palabra clave por la que queremos rankear. */}
+        <h1 className="max-w-[1100px] text-[clamp(2.75rem,7.6vw,7rem)] font-bold leading-[0.95] tracking-[-0.04em]">
+          Antes de implementar un ERP,{" "}
+          <span className="text-ocre">ordena tu negocio.</span>
+        </h1>
+        <div className="mt-10 flex flex-wrap items-start gap-x-12 gap-y-7 border-t-2 border-tinta pt-7 lg:mt-16">
+          <p className="max-w-[560px] flex-[2_1_380px] text-xl leading-normal text-tinta-suave">
+            Muchas pymes creen que necesitan un sistema. En realidad necesitan
+            procesos claros. Evita que la tecnología solo acelere tu desorden
+            actual.
+          </p>
+          <div className="flex flex-[1_1_300px] flex-wrap gap-3">
+            <Link
+              href="/contacto"
+              className="inline-flex min-h-[54px] items-center gap-3 bg-tinta px-6 font-semibold text-white transition-colors hover:bg-ocre"
+            >
+              Haz el diagnóstico gratuito <span aria-hidden="true">→</span>
+            </Link>
+            <Link
+              href="/antes-del-erp"
+              className="inline-flex min-h-[54px] items-center border-[1.5px] border-[#C9CBCF] px-6 font-semibold transition-colors hover:border-tinta"
+            >
+              ¿Por qué ordenar primero?
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Esquema: hoy vs con procesos claros */}
+      <figure className={`${contenedor} mt-12 lg:mt-20`}>
+        <div className="max-w-[980px] overflow-x-auto bg-papel px-4 py-4 sm:px-8 sm:py-7">
+          <EsquemaDesorden className="block h-auto w-full min-w-[600px]" />
+        </div>
+        <figcaption className={`${rotulo} mt-3`}>
+          Fig. 1 — El mismo negocio, antes y después de definir quién hace
+          qué, cuándo y cómo.
+        </figcaption>
+      </figure>
+
+      {/* Digitalizar no ordena */}
+      <section className="mt-20 bg-tinta text-white lg:mt-32">
+        <div
+          className={`${contenedor} flex flex-wrap gap-x-20 gap-y-12 py-16 lg:py-28`}
+        >
+          <div className="flex-[1_1_340px]">
+            <p className="mb-5 font-mono text-[13px] text-[#A6AAB1]">
+              01 / El problema
             </p>
-            <div className="flex flex-col justify-center gap-4 sm:flex-row">
-              <Link
-                href="/contacto"
-                className="rounded-xl bg-blue-600 px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-blue-200 transition-all hover:bg-blue-700"
-              >
-                Haz el diagnóstico gratuito
-              </Link>
-              <Link
-                href="/antes-del-erp"
-                className="rounded-xl border border-slate-200 bg-white px-8 py-4 text-lg font-semibold text-slate-700 transition-all hover:bg-slate-50"
-              >
-                ¿Por qué ordenar primero?
-              </Link>
-            </div>
+            <h2 className="mb-7 text-[clamp(2.5rem,5vw,4.5rem)] font-bold leading-[0.98] tracking-[-0.035em]">
+              Digitalizar no ordena.
+            </h2>
+            <blockquote className="border-t border-[#3A3D42] pt-5 text-xl leading-snug text-[#D8DADD]">
+              “Un ERP es una cáscara vacía. Si no tienes reglas de negocio
+              claras, el software no las inventará por ti.”
+            </blockquote>
+            <Link
+              href="/antes-del-erp"
+              className="mt-5 inline-block py-2.5 text-ocre-claro underline underline-offset-4 hover:text-white"
+            >
+              Leer por qué fallan las implementaciones →
+            </Link>
           </div>
+          <ul className="flex-[1.4_1_420px] border-b border-[#3A3D42]">
+            {problemas.map(({ figura: Figura, text }) => (
+              <li
+                key={text}
+                className="flex gap-7 border-t border-[#3A3D42] py-7"
+              >
+                <Figura className="mt-0.5 h-[52px] w-[52px] flex-none" />
+                <p className="text-xl leading-normal text-[#E6E7E9]">{text}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
-      <section className="bg-slate-50 py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 items-center gap-16 md:grid-cols-2">
-            <div>
-              <h2 className="mb-6 text-3xl font-bold text-slate-900">
-                Digitalizar no ordena.
-              </h2>
-              <div className="space-y-6">
-                {problemas.map((problema) => (
-                  <div key={problema} className="flex gap-4">
-                    <AlertTriangle
-                      className="mt-1 h-6 w-6 flex-shrink-0 text-amber-500"
-                      aria-hidden="true"
-                    />
-                    <p className="text-lg text-slate-600">{problema}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
-              <blockquote className="flex h-full flex-col justify-center rounded-lg bg-slate-50 p-8">
-                <p className="text-2xl font-semibold leading-snug text-slate-800">
-                  “Un ERP es una cáscara vacía. Si no tienes reglas de negocio
-                  claras, el software no las inventará por ti.”
-                </p>
-                <footer className="mt-6 text-sm font-medium text-slate-500">
-                  <Link
-                    href="/antes-del-erp"
-                    className="text-blue-600 hover:underline"
-                  >
-                    Leer por qué fallan las implementaciones
-                  </Link>
-                </footer>
-              </blockquote>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-slate-900">
+      {/* Servicios */}
+      <section className={`${contenedor} py-20 lg:py-32`}>
+        <div className="mb-14 flex flex-wrap items-end justify-between gap-x-12 gap-y-5">
+          <div>
+            <p className={`${rotulo} mb-5`}>02 / Servicios</p>
+            <h2 className="text-[clamp(2.25rem,4.4vw,4rem)] font-bold leading-none tracking-[-0.035em]">
               Cómo ayudo a tu negocio
             </h2>
-            <p className="mx-auto max-w-2xl text-lg text-slate-600">
-              Enfocado en resultados operativos, no en jerga técnica.
+          </div>
+          <p className="max-w-[360px] text-gris">
+            Enfocado en resultados operativos, no en jerga técnica. Cada
+            servicio se contrata por separado, según lo que tu empresa necesite
+            hoy.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 gap-y-12 border-t-2 border-tinta pt-10 md:grid-cols-3">
+          {ayudas.map(({ figura: Figura, ...ayuda }, i) => (
+            <article
+              key={ayuda.title}
+              className={`md:px-10 ${i === 0 ? "md:pl-0" : ""} ${
+                i === ayudas.length - 1 ? "md:pr-0" : "md:border-r md:border-linea"
+              }`}
+            >
+              <Figura className="h-[72px] w-[72px]" />
+              <h3 className="mb-3.5 mt-7 text-[26px] font-bold leading-tight tracking-[-0.02em]">
+                <Link href={ayuda.href} className="hover:text-ocre">
+                  {ayuda.title}
+                </Link>
+              </h3>
+              <p className="mb-6 text-gris-medio">{ayuda.text}</p>
+              <Link
+                href={ayuda.href}
+                className="font-semibold underline underline-offset-4 hover:text-ocre"
+              >
+                {ayuda.cta} <span aria-hidden="true">→</span>
+              </Link>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Para quién */}
+      <section className="flex flex-wrap border-t border-linea">
+        <div className="flex flex-[1_1_420px] justify-end px-5 py-14 sm:px-8 lg:px-[72px] lg:py-24">
+          <div className="w-full max-w-[520px]">
+            <p className={`${rotulo} mb-5`}>03 / Para quién</p>
+            <h2 className="mb-8 text-4xl font-bold leading-tight tracking-[-0.03em]">
+              Esto es para ti si:
+            </h2>
+            <ul className="flex flex-col gap-5">
+              {paraTi.map((item) => (
+                <li key={item} className="flex gap-4">
+                  <Check
+                    className="mt-0.5 h-[22px] w-[22px] flex-none text-ocre"
+                    aria-hidden="true"
+                  />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <div className="flex-[1_1_420px] bg-papel px-5 py-14 sm:px-8 lg:px-[72px] lg:py-24">
+          <div className="max-w-[520px] lg:pt-[46px]">
+            <h2 className="mb-8 text-4xl font-bold leading-tight tracking-[-0.03em] text-gris-medio">
+              Esto NO es para ti si:
+            </h2>
+            <ul className="flex flex-col gap-5 text-gris-medio">
+              {noParaTi.map((item) => (
+                <li key={item} className="flex gap-4">
+                  <X
+                    className="mt-0.5 h-[22px] w-[22px] flex-none text-[#6B7078]"
+                    aria-hidden="true"
+                  />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Cierre con la persona detrás del servicio */}
+      <section className="border-t-2 border-tinta">
+        <div
+          className={`${contenedor} flex flex-wrap items-end justify-between gap-x-16 gap-y-10 py-20 lg:py-32`}
+        >
+          <div className="min-w-0 flex-[999_1_560px]">
+            <p className={`${rotulo} mb-5`}>
+              04 / Diagnóstico gratuito · 30 min
+            </p>
+            <h2 className="mb-6 text-[clamp(2.5rem,5.4vw,5rem)] font-bold leading-[0.98] tracking-[-0.04em]">
+              ¿Listo para poner orden en tu operación?
+            </h2>
+            <p className="max-w-[560px] text-[19px] text-gris-medio">
+              Conversemos 30 minutos sobre tu operación y evaluemos, sin costo,
+              si tu empresa está lista para dar el paso.
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {ayudas.map((ayuda) => (
-              <article
-                key={ayuda.title}
-                className="rounded-2xl border border-slate-100 bg-slate-50 p-8 transition-shadow hover:shadow-lg"
-              >
-                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100 text-blue-600">
-                  <ayuda.icon className="h-6 w-6" aria-hidden="true" />
-                </div>
-                <h3 className="mb-4 text-xl font-bold">
-                  <Link
-                    href={ayuda.href}
-                    className="transition-colors hover:text-blue-600"
-                  >
-                    {ayuda.title}
-                  </Link>
-                </h3>
-                <p className="leading-relaxed text-slate-600">{ayuda.text}</p>
-              </article>
-            ))}
+          <div className="flex max-w-[360px] flex-[1_1_300px] flex-col gap-5">
+            <figure className="flex items-center gap-4 border-b border-linea pb-5">
+              <Image
+                src={site.founder.image}
+                alt={site.founder.name}
+                width={88}
+                height={88}
+                className="h-[88px] w-[88px] flex-none object-cover grayscale"
+              />
+              <figcaption className="text-[15px] leading-snug text-gris-medio">
+                <strong className="block text-[17px] font-bold text-tinta">
+                  {site.founder.name}
+                </strong>
+                Consultor independiente de procesos y operaciones
+              </figcaption>
+            </figure>
+            <Link
+              href="/contacto"
+              className="inline-flex min-h-[60px] items-center justify-between gap-3 bg-ocre px-6 text-[17px] font-semibold text-white transition-colors hover:bg-ocre-oscuro"
+            >
+              Solicitar diagnóstico gratuito <span aria-hidden="true">→</span>
+            </Link>
+            <Link
+              href="/antes-del-erp"
+              className="inline-flex min-h-[52px] items-center border-[1.5px] border-[#C9CBCF] px-6 font-semibold transition-colors hover:border-tinta"
+            >
+              ¿Por qué ordenar primero?
+            </Link>
           </div>
         </div>
       </section>
-
-      <section className="bg-slate-50 py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
-            <div className="rounded-2xl border-l-4 border-blue-600 bg-white p-10 shadow-sm">
-              <h2 className="mb-6 text-2xl font-bold text-slate-900">
-                Esto es para ti si:
-              </h2>
-              <ul className="space-y-4">
-                {paraTi.map((item) => (
-                  <li key={item} className="flex gap-3 text-slate-600">
-                    <Check
-                      className="mt-0.5 h-5 w-5 flex-shrink-0 text-emerald-500"
-                      aria-hidden="true"
-                    />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="rounded-2xl border-l-4 border-slate-400 bg-white p-10 shadow-sm">
-              <h2 className="mb-6 text-2xl font-bold text-slate-900">
-                Esto NO es para ti si:
-              </h2>
-              <ul className="space-y-4">
-                {noParaTi.map((item) => (
-                  <li key={item} className="flex gap-3 text-slate-600 opacity-80">
-                    <X
-                      className="mt-0.5 h-5 w-5 flex-shrink-0 text-slate-400"
-                      aria-hidden="true"
-                    />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <CtaFinal description="Conversemos 30 minutos sobre tu operación y evaluemos, sin costo, si tu empresa está lista para dar el paso." />
     </>
   );
 }

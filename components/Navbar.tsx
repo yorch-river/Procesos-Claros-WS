@@ -21,18 +21,21 @@ export default function Navbar() {
     path === "/" ? pathname === "/" : pathname.startsWith(path);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white">
+    <header className="sticky top-0 z-50 border-b border-linea bg-white">
       <nav aria-label="Navegación principal">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[1320px] px-5 sm:px-8 lg:px-[60px]">
           <div className="flex h-20 justify-between">
             <div className="flex items-center">
-              <Link href="/" className="flex flex-shrink-0 items-center">
-                <span className="text-xl font-bold tracking-tight text-slate-800">
-                  PROCESOS<span className="text-blue-600">CLAROS</span>
-                </span>
-                <span className="sr-only">
-                  Procesos Claros, inicio
-                </span>
+              <Link
+                href="/"
+                className="flex flex-shrink-0 items-center gap-3 text-[19px] font-bold tracking-[-0.01em] text-tinta"
+              >
+                <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
+                  <rect x="1" y="1" width="20" height="20" fill="none" stroke="#1A1C1F" strokeWidth="2" />
+                  <path d="M6 8h10M6 14h6" stroke="#B45309" strokeWidth="2" />
+                </svg>
+                Procesos Claros
+                <span className="sr-only">, inicio</span>
               </Link>
             </div>
 
@@ -44,18 +47,18 @@ export default function Navbar() {
                   aria-current={isActive(link.path) ? "page" : undefined}
                   className={`${
                     isActive(link.path)
-                      ? "border-blue-600 text-slate-900"
-                      : "border-transparent text-slate-500 hover:border-slate-300 hover:text-slate-700"
-                  } inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium transition-colors`}
+                      ? "border-ocre text-tinta"
+                      : "border-transparent text-gris-medio hover:border-linea hover:text-tinta"
+                  } inline-flex items-center border-b-2 px-1 pt-1 text-[15px] font-medium transition-colors`}
                 >
                   {link.name}
                 </Link>
               ))}
               <Link
                 href="/contacto"
-                className="rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700"
+                className="inline-flex min-h-[44px] items-center border-[1.5px] border-tinta px-[18px] text-[15px] font-semibold text-tinta transition-colors hover:bg-tinta hover:text-white"
               >
-                Diagnóstico Gratuito
+                Diagnóstico gratuito
               </Link>
             </div>
 
@@ -66,7 +69,7 @@ export default function Navbar() {
                 aria-expanded={isOpen}
                 aria-controls="menu-movil"
                 aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
-                className="inline-flex items-center justify-center rounded-md p-2 text-slate-500 hover:bg-slate-100 hover:text-slate-700"
+                className="inline-flex items-center justify-center p-2 text-tinta hover:bg-papel"
               >
                 {isOpen ? (
                   <X className="block h-6 w-6" aria-hidden="true" />
@@ -81,7 +84,7 @@ export default function Navbar() {
         {isOpen && (
           <div
             id="menu-movil"
-            className="border-b border-slate-100 bg-white shadow-lg md:hidden"
+            className="border-b border-linea bg-white md:hidden"
           >
             <ul className="space-y-1 pb-3 pt-2">
               {navigation.map((link) => (
@@ -92,8 +95,8 @@ export default function Navbar() {
                     aria-current={isActive(link.path) ? "page" : undefined}
                     className={`${
                       isActive(link.path)
-                        ? "border-blue-600 bg-blue-50 text-blue-700"
-                        : "border-transparent text-slate-500 hover:border-slate-300 hover:bg-slate-50 hover:text-slate-700"
+                        ? "border-ocre bg-papel text-tinta"
+                        : "border-transparent text-gris-medio hover:border-linea hover:bg-papel hover:text-tinta"
                     } block border-l-4 py-3 pl-3 pr-4 text-base font-medium`}
                   >
                     {link.name}

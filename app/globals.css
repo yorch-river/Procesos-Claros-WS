@@ -8,7 +8,19 @@
  */
 
 @theme {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+
+  /* Paleta del rediseño: grafito, ocre y un gris papel. */
+  --color-tinta: #1a1c1f;
+  --color-tinta-suave: #33363b;
+  --color-gris: #5b6068;
+  --color-gris-medio: #4a4e55;
+  --color-linea: #e2e3e5;
+  --color-papel: #f3f3f1;
+  --color-ocre: #b45309;
+  --color-ocre-oscuro: #92400e;
+  --color-ocre-claro: #f2a65a;
 }
 
 html {
@@ -45,6 +57,6 @@ h3 {
 
 /* Foco visible y consistente para navegación por teclado. */
 :focus-visible {
-  outline: 2px solid var(--color-blue-600);
+  outline: 2px solid var(--color-ocre);
   outline-offset: 2px;
 }
