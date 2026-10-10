@@ -98,7 +98,7 @@ export default async function PostPage({
             </p>
           </div>
 
-          <h1 className="mb-10 max-w-[960px] text-[clamp(2.25rem,5vw,4.25rem)] font-bold leading-[1.02] tracking-[-0.035em]">
+          <h1 className="mb-10 max-w-[960px] text-[clamp(2rem,3.8vw,3.25rem)] font-bold leading-[1.1] tracking-[-0.022em]">
             {post.title}
           </h1>
 

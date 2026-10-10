@@ -31,7 +31,7 @@ export default function CtaFinal({
       >
         <div className="min-w-0 flex-[999_1_560px]">
           <p className={`${claseRotulo} mb-5`}>{rotulo}</p>
-          <h2 className="mb-6 text-[clamp(2.5rem,5.4vw,5rem)] font-bold leading-[0.98] tracking-[-0.04em]">
+          <h2 className="mb-6 text-[clamp(2rem,3.6vw,3rem)] font-bold leading-[1.1] tracking-[-0.022em]">
             {title}
           </h2>
           <p className="max-w-[560px] text-[19px] text-gris-medio">
