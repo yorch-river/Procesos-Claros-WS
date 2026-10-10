@@ -1,5 +1,7 @@
 import Link from "next/link";
+import { FiguraCaminoRoto } from "@/components/Figuras";
 import { navigation } from "@/lib/site";
+import { contenedor, rotulo, tituloPagina } from "@/lib/estilos";
 
 export const metadata = {
   title: "Página no encontrada",
@@ -10,23 +12,20 @@ export const metadata = {
 
 export default function NotFound() {
   return (
-    <div className="mx-auto max-w-2xl px-4 py-32 text-center">
-      <p className="mb-4 text-sm font-bold uppercase tracking-widest text-blue-600">
-        Error 404
-      </p>
-      <h1 className="mb-6 text-4xl font-extrabold text-slate-900">
-        Esta página no existe.
-      </h1>
-      <p className="mb-10 text-xl text-slate-600">
+    <div className={`${contenedor} py-20 lg:py-32`}>
+      <FiguraCaminoRoto className="mb-10 h-28 w-28" />
+      <p className={`${rotulo} mb-6`}>[ Error 404 ]</p>
+      <h1 className={`${tituloPagina} mb-8`}>Esta página no existe.</h1>
+      <p className="mb-10 max-w-[640px] border-t-2 border-tinta pt-7 text-xl text-tinta-suave">
         Puede que el enlace esté mal escrito o que la página haya cambiado de
         dirección. Estas sí existen:
       </p>
-      <ul className="flex flex-wrap justify-center gap-3">
+      <ul className="flex flex-wrap gap-3">
         {navigation.map((link) => (
           <li key={link.path}>
             <Link
               href={link.path}
-              className="inline-block rounded-xl border border-slate-200 bg-white px-5 py-3 font-medium text-slate-700 transition-colors hover:border-blue-200 hover:text-blue-600"
+              className="inline-flex min-h-[48px] items-center border-[1.5px] border-[#C9CBCF] px-5 font-semibold transition-colors hover:border-tinta hover:text-ocre"
             >
               {link.name}
             </Link>

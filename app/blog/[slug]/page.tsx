@@ -1,14 +1,16 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Clock, ArrowLeft } from "lucide-react";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import CtaFinal from "@/components/CtaFinal";
+import Faqs from "@/components/Faqs";
+import FiguraCategoria from "@/components/FiguraCategoria";
 import JsonLd from "@/components/JsonLd";
 import PostBody from "@/components/PostBody";
-import Faqs from "@/components/Faqs";
-import CtaFinal from "@/components/CtaFinal";
 import { pageMetadata } from "@/lib/seo";
 import { articleSchema } from "@/lib/schema";
 import { site } from "@/lib/site";
+import { contenedor, rotulo, tituloSeccion } from "@/lib/estilos";
 import { posts, getPost, getRelatedPosts, formatDate } from "@/content/posts";
 
 /**
@@ -60,8 +62,8 @@ export default async function PostPage({
   const relacionados = getRelatedPosts(post);
 
   return (
-    <article className="py-20">
-      <div className="mx-auto max-w-3xl px-4">
+    <>
+      <article className={`${contenedor} pb-20 pt-10 sm:pt-14 lg:pb-28`}>
         <JsonLd
           data={articleSchema({
             title: post.title,
@@ -79,61 +81,86 @@ export default async function PostPage({
           ]}
         />
 
-        <header className="mb-12">
-          <div className="mb-4 flex flex-wrap items-center gap-4 text-sm font-bold uppercase tracking-wider text-blue-600">
-            <span>{post.category}</span>
-            <span aria-hidden="true" className="text-slate-300">
-              •
-            </span>
-            <time
-              dateTime={post.datePublished}
-              className="font-normal normal-case tracking-normal text-slate-400"
-            >
-              {formatDate(post.datePublished)}
-            </time>
-            <span className="flex items-center gap-1 font-normal normal-case tracking-normal text-slate-400">
-              <Clock className="h-4 w-4" aria-hidden="true" />
-              {post.readingMinutes} min de lectura
-            </span>
+        <header className="mb-14 mt-10 sm:mt-14">
+          <div className="mb-8 flex items-center gap-5">
+            <FiguraCategoria
+              categoria={post.category}
+              className="h-14 w-14 flex-none"
+            />
+            <p className={`${rotulo} flex flex-wrap gap-x-3`}>
+              <span className="text-ocre">{post.category}</span>
+              <span aria-hidden="true">/</span>
+              <time dateTime={post.datePublished}>
+                {formatDate(post.datePublished)}
+              </time>
+              <span aria-hidden="true">/</span>
+              <span>{post.readingMinutes} min de lectura</span>
+            </p>
           </div>
 
-          <h1 className="mb-6 text-4xl font-extrabold leading-tight text-slate-900">
+          <h1 className="mb-10 max-w-[960px] text-[clamp(2.25rem,5vw,4.25rem)] font-bold leading-[1.02] tracking-[-0.035em]">
             {post.title}
           </h1>
 
-          <p className="text-xl leading-relaxed text-slate-600">{post.intro}</p>
+          <div className="max-w-[720px] border-t-2 border-tinta pt-7">
+            <p className="text-[22px] leading-normal text-tinta-suave">
+              {post.intro}
+            </p>
 
-          <p className="mt-8 border-t border-slate-100 pt-6 text-sm text-slate-500">
-            Por{" "}
-            <Link href="/sobre-mi" className="font-medium text-slate-700 hover:text-blue-600">
-              {site.founder.name}
-            </Link>
-            , {site.founder.jobTitle.toLowerCase()}.
-          </p>
+            <p className="mt-8 flex items-center gap-4 text-[15px] text-gris-medio">
+              <Image
+                src={site.founder.image}
+                alt=""
+                width={48}
+                height={48}
+                className="h-12 w-12 flex-none object-cover grayscale"
+              />
+              <span>
+                Por{" "}
+                <Link
+                  href="/sobre-mi"
+                  className="font-semibold text-tinta underline-offset-4 hover:text-ocre hover:underline"
+                >
+                  {site.founder.name}
+                </Link>
+                , {site.founder.jobTitle.toLowerCase()}.
+              </span>
+            </p>
+          </div>
         </header>
 
-        <PostBody sections={post.sections} />
+        <div className="max-w-[720px]">
+          <PostBody sections={post.sections} />
 
-        {post.faqs && <Faqs faqs={post.faqs} />}
+          {post.faqs && <Faqs faqs={post.faqs} />}
+        </div>
 
         {relacionados.length > 0 && (
-          <section className="mt-16 border-t border-slate-200 pt-12">
-            <h2 className="mb-8 text-2xl font-bold text-slate-900">
-              Artículos relacionados
-            </h2>
-            <ul className="space-y-4">
+          <section className="mt-20">
+            <p className={`${rotulo} mb-5`}>Para seguir</p>
+            <h2 className={`${tituloSeccion} mb-10`}>Artículos relacionados</h2>
+            <ul className="border-t-2 border-tinta">
               {relacionados.map((related) => (
-                <li key={related.slug}>
+                <li key={related.slug} className="border-b border-linea">
                   <Link
                     href={`/blog/${related.slug}`}
-                    className="group block rounded-xl border border-slate-200 bg-white p-6 transition-colors hover:border-blue-200"
+                    className="group flex flex-wrap items-start gap-x-8 gap-y-3 py-7"
                   >
-                    <h3 className="font-bold text-slate-900 transition-colors group-hover:text-blue-600">
-                      {related.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-slate-600">
-                      {related.excerpt}
-                    </p>
+                    <FiguraCategoria
+                      categoria={related.category}
+                      className="h-12 w-12 flex-none"
+                    />
+                    <span className="min-w-0 flex-[1_1_420px]">
+                      <span className="block text-2xl font-bold leading-tight tracking-[-0.02em] group-hover:text-ocre">
+                        {related.title}
+                      </span>
+                      <span className="mt-2 block text-gris-medio">
+                        {related.excerpt}
+                      </span>
+                    </span>
+                    <span aria-hidden="true" className="self-center text-xl text-ocre">
+                      →
+                    </span>
                   </Link>
                 </li>
               ))}
@@ -144,21 +171,18 @@ export default async function PostPage({
         <p className="mt-12">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 font-bold text-blue-600 hover:gap-3"
+            className="inline-flex min-h-[44px] items-center gap-2 font-semibold hover:text-ocre"
           >
-            <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+            <span aria-hidden="true">←</span>
             Volver a todos los artículos
           </Link>
         </p>
-      </div>
+      </article>
 
-      <div className="mt-20">
-        <CtaFinal
-          title="¿Esto te suena a tu empresa?"
-          description="Conversemos 30 minutos sobre tu operación. Sin costo y sin compromiso."
-          variant="oscuro"
-        />
-      </div>
-    </article>
+      <CtaFinal
+        title="¿Esto te suena a tu empresa?"
+        description="Conversemos 30 minutos sobre tu operación. Sin costo y sin compromiso."
+      />
+    </>
   );
 }

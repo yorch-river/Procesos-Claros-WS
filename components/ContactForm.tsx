@@ -2,10 +2,16 @@
 
 import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
-import { CheckCircle, Send, AlertCircle } from "lucide-react";
+import { FiguraDesenredo } from "@/components/Figuras";
 import { enviarContacto, type ContactState } from "@/app/contacto/actions";
 
 const estadoInicial: ContactState = { status: "idle" };
+
+const claseEtiqueta = "mb-2 block font-mono text-[13px] text-gris";
+// Campo recto con borde grafito; el foco se marca en ocre, igual que en el
+// resto del sitio.
+const claseCampo =
+  "w-full border-[1.5px] border-[#C9CBCF] bg-white px-4 py-3 text-lg outline-none transition-colors placeholder:text-[#8C9097] focus:border-tinta focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocre";
 
 function BotonEnviar() {
   const { pending } = useFormStatus();
@@ -14,10 +20,10 @@ function BotonEnviar() {
     <button
       type="submit"
       disabled={pending}
-      className="flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 py-4 text-lg font-bold text-white transition-all hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
+      className="flex min-h-[60px] w-full items-center justify-between gap-3 bg-ocre px-6 text-lg font-semibold text-white transition-colors hover:bg-ocre-oscuro disabled:cursor-not-allowed disabled:opacity-60"
     >
-      {pending ? "Enviando…" : "Solicitar Diagnóstico"}
-      <Send className="h-5 w-5" aria-hidden="true" />
+      {pending ? "Enviando…" : "Solicitar diagnóstico"}
+      <span aria-hidden="true">→</span>
     </button>
   );
 }
@@ -44,14 +50,13 @@ export default function ContactForm() {
 
   if (state.status === "success") {
     return (
-      <div className="rounded-3xl border border-slate-100 bg-white p-10 text-center shadow-xl">
-        <div className="mb-8 inline-flex h-20 w-20 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
-          <CheckCircle className="h-10 w-10" aria-hidden="true" />
-        </div>
-        <h2 className="mb-4 text-3xl font-bold text-slate-900">
+      <div className="border-t-2 border-tinta bg-papel p-8 sm:p-10">
+        {/* El enredo que termina en línea recta: lo que viene después. */}
+        <FiguraDesenredo className="mb-8 h-24 w-24" />
+        <h2 className="mb-4 text-3xl font-bold tracking-[-0.025em]">
           ¡Gracias por tu mensaje!
         </h2>
-        <p className="text-xl text-slate-600">
+        <p className="text-xl text-tinta-suave">
           He recibido tu información. Me pondré en contacto contigo en las
           próximas 24-48 horas para agendar tu diagnóstico gratuito.
         </p>
@@ -60,14 +65,14 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="rounded-3xl border border-slate-100 bg-white p-10 shadow-xl">
+    <div className="border-t-2 border-tinta bg-papel p-6 sm:p-10">
       <form action={formAction} className="space-y-6">
         {state.status === "error" && (
           <p
             role="alert"
-            className="flex gap-3 rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900"
+            className="flex gap-3 border-[1.5px] border-ocre bg-white p-4 text-[15px] text-ocre-oscuro"
           >
-            <AlertCircle className="mt-0.5 h-5 w-5 flex-shrink-0" aria-hidden="true" />
+            <span aria-hidden="true" className="font-bold">!</span>
             {state.message}
           </p>
         )}
@@ -77,7 +82,7 @@ export default function ContactForm() {
             <div key={campo.name}>
               <label
                 htmlFor={campo.name}
-                className="mb-2 block text-sm font-bold text-slate-700"
+                className={claseEtiqueta}
               >
                 {campo.label}
               </label>
@@ -88,7 +93,7 @@ export default function ContactForm() {
                 required
                 autoComplete={campo.autoComplete}
                 placeholder={campo.placeholder}
-                className="w-full rounded-xl border border-slate-200 px-5 py-3 outline-none ring-blue-500 transition-all focus:ring-2"
+                className={claseCampo}
               />
             </div>
           ))}
@@ -97,7 +102,7 @@ export default function ContactForm() {
         <div>
           <label
             htmlFor="email"
-            className="mb-2 block text-sm font-bold text-slate-700"
+            className={claseEtiqueta}
           >
             Email Profesional
           </label>
@@ -108,14 +113,14 @@ export default function ContactForm() {
             required
             autoComplete="email"
             placeholder="tu@empresa.com"
-            className="w-full rounded-xl border border-slate-200 px-5 py-3 outline-none ring-blue-500 transition-all focus:ring-2"
+            className={claseCampo}
           />
         </div>
 
         <div>
           <label
             htmlFor="mensaje"
-            className="mb-2 block text-sm font-bold text-slate-700"
+            className={claseEtiqueta}
           >
             ¿Qué está pasando hoy en tu negocio?
           </label>
@@ -125,7 +130,7 @@ export default function ContactForm() {
             rows={4}
             required
             placeholder="Cuéntame brevemente tus retos operativos…"
-            className="w-full rounded-xl border border-slate-200 px-5 py-3 outline-none ring-blue-500 transition-all focus:ring-2"
+            className={claseCampo}
           />
         </div>
 
@@ -137,7 +142,7 @@ export default function ContactForm() {
 
         <BotonEnviar />
 
-        <p className="text-center text-xs text-slate-400">
+        <p className="text-center text-[13px] text-gris">
           Tus datos están seguros y serán tratados con absoluta
           confidencialidad.
         </p>

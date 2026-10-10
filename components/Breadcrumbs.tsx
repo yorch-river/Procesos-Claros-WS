@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
 import JsonLd from "./JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 
@@ -18,28 +17,27 @@ export default function Breadcrumbs({ items }: { items: Crumb[] }) {
   return (
     <>
       <JsonLd data={breadcrumbSchema(trail)} />
-      <nav aria-label="Ruta de navegación" className="mb-8">
-        <ol className="flex flex-wrap items-center gap-1 text-sm text-slate-500">
+      <nav aria-label="Ruta de navegación">
+        <ol className="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[13px] text-gris">
           {trail.map((crumb, index) => {
             const isLast = index === trail.length - 1;
             return (
-              <li key={crumb.path} className="flex items-center gap-1">
+              <li key={crumb.path} className="flex items-center gap-2">
                 {isLast ? (
-                  <span aria-current="page" className="font-medium text-slate-700">
+                  <span aria-current="page" className="text-tinta">
                     {crumb.name}
                   </span>
                 ) : (
                   <>
                     <Link
                       href={crumb.path}
-                      className="transition-colors hover:text-blue-600"
+                      className="underline-offset-4 transition-colors hover:text-ocre hover:underline"
                     >
                       {crumb.name}
                     </Link>
-                    <ChevronRight
-                      className="h-4 w-4 text-slate-300"
-                      aria-hidden="true"
-                    />
+                    <span aria-hidden="true" className="text-[#B5B8BD]">
+                      /
+                    </span>
                   </>
                 )}
               </li>

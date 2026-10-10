@@ -1,5 +1,6 @@
 import JsonLd from "./JsonLd";
 import { faqSchema } from "@/lib/schema";
+import { rotulo as claseRotulo, tituloSeccion } from "@/lib/estilos";
 import type { Faq } from "@/content/types";
 
 /**
@@ -12,36 +13,36 @@ import type { Faq } from "@/content/types";
 export default function Faqs({
   faqs,
   title = "Preguntas frecuentes",
+  rotulo,
 }: {
   faqs: Faq[];
   title?: string;
+  rotulo?: string;
 }) {
   if (faqs.length === 0) return null;
 
   return (
-    <section className="mt-16 border-t border-slate-200 pt-12">
+    <section className="mt-20">
       <JsonLd data={faqSchema(faqs)} />
-      <h2 className="mb-8 text-2xl font-bold text-slate-900 sm:text-3xl">
-        {title}
-      </h2>
-      <div className="space-y-4">
+      {rotulo && <p className={`${claseRotulo} mb-5`}>{rotulo}</p>}
+      <h2 className={`${tituloSeccion} mb-10`}>{title}</h2>
+      <div className="border-b border-linea">
         {faqs.map((faq) => (
-          <details
-            key={faq.question}
-            className="group rounded-2xl border border-slate-200 bg-white p-6 open:shadow-sm"
-          >
-            <summary className="cursor-pointer list-none font-bold text-slate-900 marker:content-none">
-              <span className="flex items-start justify-between gap-4">
+          <details key={faq.question} className="group border-t border-linea">
+            <summary className="cursor-pointer list-none py-6 marker:content-none [&::-webkit-details-marker]:hidden">
+              <span className="flex items-start justify-between gap-6 text-xl font-semibold leading-snug tracking-[-0.01em]">
                 {faq.question}
                 <span
                   aria-hidden="true"
-                  className="mt-1 flex-shrink-0 text-blue-600 transition-transform group-open:rotate-45"
+                  className="mt-0.5 flex-none text-2xl leading-none text-ocre transition-transform group-open:rotate-45"
                 >
                   +
                 </span>
               </span>
             </summary>
-            <p className="mt-4 leading-relaxed text-slate-600">{faq.answer}</p>
+            <p className="max-w-[720px] pb-7 text-lg leading-relaxed text-gris-medio">
+              {faq.answer}
+            </p>
           </details>
         ))}
       </div>
