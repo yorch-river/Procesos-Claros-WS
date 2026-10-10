@@ -52,6 +52,7 @@ export const navigation = [
   { name: "Antes del ERP", path: "/antes-del-erp" },
   { name: "Servicios", path: "/servicios" },
   { name: "Blog", path: "/blog" },
+  { name: "Recursos", path: "/recursos" },
   { name: "Sobre Mí", path: "/sobre-mi" },
   { name: "Contacto", path: "/contacto" },
 ] as const;

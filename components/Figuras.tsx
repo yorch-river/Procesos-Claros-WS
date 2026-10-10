@@ -680,3 +680,21 @@ export function FiguraCaminoRoto({ className, trazo, acento = OCRE }: FiguraColo
     </Lienzo>
   );
 }
+
+/* ---- Recursos ---- */
+
+/** El test: una planilla con respuestas y un medidor de madurez. */
+export function FiguraTestMadurez({ className, trazo, acento = OCRE }: FiguraColorProps) {
+  return (
+    <Lienzo className={className} trazo={trazo}>
+      <rect x="3" y="4" width="28" height="36" />
+      <path d="M3 11h28M3 18h28M3 25h28M3 32h28M10 4v36" />
+      <g stroke={acento}>
+        <path d="M14 14.5h6M14 21.5h12M14 28.5h4M14 35.5h9" strokeWidth="2.2" />
+      </g>
+      <path d="M27 44 A 10 10 0 0 1 47 44" fill="#FFFFFF" />
+      <path d="M37 44 L 43 37" stroke={acento} strokeWidth="2" />
+      <circle cx="37" cy="44" r="1.2" />
+    </Lienzo>
+  );
+}

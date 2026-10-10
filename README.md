@@ -42,6 +42,23 @@ Para recibir mensajes desde cualquier visitante hay que verificar
 definir `CONTACT_FROM`. Mientras no esté verificado, el formulario funciona
 pero los avisos solo llegan al correo con que se creó la cuenta de Resend.
 
+## Recursos descargables
+
+`/recursos` entrega el **Test de madurez operativa** (Excel) a cambio de nombre,
+empresa y correo. Cada descarga llega como aviso por Resend, con las mismas
+variables de entorno del formulario de contacto. Si el aviso no se puede
+enviar, la descarga se entrega igual y los datos quedan en los registros de
+Vercel (`Descarga entregada sin aviso`).
+
+La planilla se genera con un script, no se edita a mano:
+
+```bash
+python tools/crear_test_madurez.py public/descargas/test-de-madurez-operativa.xlsx
+```
+
+Después conviene abrirla en Excel y guardarla una vez, para que quede con los
+resultados calculados. `/descargas/` está excluido en robots.txt.
+
 ## Estructura
 
 ```

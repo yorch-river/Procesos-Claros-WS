@@ -2,6 +2,7 @@ import Link from "next/link";
 import CtaFinal from "@/components/CtaFinal";
 import EncabezadoPagina from "@/components/EncabezadoPagina";
 import Faqs from "@/components/Faqs";
+import RecursoDestacado from "@/components/RecursoDestacado";
 import {
   FiguraCabeza,
   FiguraCaminos,
@@ -195,6 +196,8 @@ export default function BeforeErpPage() {
       </section>
 
       <div className={contenedor}>
+        <RecursoDestacado className="mt-20" />
+
         <div className="max-w-[880px]">
           <Faqs
             rotulo="04 / Preguntas"

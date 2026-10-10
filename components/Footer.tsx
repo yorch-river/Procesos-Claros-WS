@@ -53,7 +53,15 @@ export default function Footer() {
                   href="/blog"
                   className="transition-colors hover:text-ocre-claro"
                 >
-                  Recursos / Blog
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/recursos"
+                  className="transition-colors hover:text-ocre-claro"
+                >
+                  Test de madurez (Excel)
                 </Link>
               </li>
               <li>
