@@ -11,10 +11,10 @@ export const contenedor = "mx-auto max-w-[1320px] px-5 sm:px-8 lg:px-[60px]";
 export const rotulo = "font-mono text-[13px] tracking-wide text-gris";
 
 export const tituloPagina =
-  "text-[clamp(2.5rem,6vw,5.5rem)] font-bold leading-[0.98] tracking-[-0.035em]";
+  "text-[clamp(2.125rem,4.2vw,3.5rem)] font-bold leading-[1.08] tracking-[-0.022em]";
 
 export const tituloSeccion =
-  "text-[clamp(2rem,4vw,3.5rem)] font-bold leading-[1.02] tracking-[-0.03em]";
+  "text-[clamp(1.75rem,3vw,2.5rem)] font-bold leading-[1.12] tracking-[-0.018em]";
 
 export const botonPrimario =
   "inline-flex min-h-[54px] items-center gap-3 bg-tinta px-6 font-semibold text-white transition-colors hover:bg-ocre";

@@ -156,7 +156,7 @@ export default function SobreMiPage() {
         </ul>
 
         <div className="mt-20 flex flex-wrap items-center justify-between gap-x-12 gap-y-8 border-t-2 border-tinta pt-10">
-          <p className="text-[clamp(1.75rem,3.4vw,2.75rem)] font-bold leading-tight tracking-[-0.03em]">
+          <p className="text-[clamp(1.5rem,2.6vw,2.25rem)] font-bold leading-tight tracking-[-0.018em]">
             ¿Hablamos sobre cómo poner orden en tu casa?
           </p>
           <div className="flex flex-wrap gap-3">

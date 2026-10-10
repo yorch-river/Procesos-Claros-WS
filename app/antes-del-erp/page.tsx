@@ -23,7 +23,7 @@ import { posts } from "@/content/posts";
 export const metadata = pageMetadata({
   title: "Qué hacer antes de implementar un ERP en tu pyme",
   description:
-    "El 70% de las implementaciones de ERP falla o se excede en presupuesto. Por qué ocurre en pymes y qué debes definir antes de comprar.",
+    "Casi la mitad de las implementaciones de ERP fallan o se exceden en presupuesto. Por qué ocurre y qué debes definir antes de comprar.",
   path: "/antes-del-erp",
 });
 
@@ -102,9 +102,8 @@ export default function BeforeErpPage() {
           <p>
             El mercado del software de gestión está lleno de promesas. Te dicen
             que con su herramienta tendrás “control total”, “visibilidad 360” y
-            “eficiencia máxima”. Pero la realidad es que el 70% de las
-            implementaciones de ERP fallan o se exceden masivamente en
-            presupuesto.
+            “eficiencia máxima”. Pero la realidad es que casi la mitad de las
+            implementaciones fallan o se exceden masivamente en presupuesto.
           </p>
         }
         aside={<FiguraCascaraVacia className="h-32 w-32 sm:h-40 sm:w-40" />}
@@ -117,7 +116,7 @@ export default function BeforeErpPage() {
             01 / Por qué fallan
           </p>
           <h2 className={`${tituloSeccion} mb-14 max-w-[820px]`}>
-            ¿Por qué fallan las implementaciones en pymes?
+            ¿Por qué fallan las implementaciones?
           </h2>
           <div className="grid grid-cols-1 gap-y-12 md:grid-cols-3">
             {causasFallo.map(({ figura: Figura, ...causa }, i) => (

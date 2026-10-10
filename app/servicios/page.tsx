@@ -88,7 +88,7 @@ export default function ServiciosPage() {
                 {/* Columna izquierda: qué es y para qué problema */}
                 <div className="min-w-0 flex-[1_1_380px]">
                   <Figura className="mb-8 h-24 w-24" />
-                  <h2 className="mb-8 text-[clamp(2rem,3.6vw,3rem)] font-bold leading-[1.02] tracking-[-0.03em]">
+                  <h2 className="mb-8 text-[clamp(1.75rem,2.8vw,2.25rem)] font-bold leading-[1.12] tracking-[-0.018em]">
                     {servicio.title}
                   </h2>
                   <p className={`${rotulo} mb-3`}>El problema</p>
@@ -139,8 +139,8 @@ export default function ServiciosPage() {
       </div>
 
       <CtaFinal
-        title="¿No sabes cuál de los tres necesitas?"
-        description="Esa es exactamente la pregunta que responde el diagnóstico gratuito de 30 minutos."
+        title="Veamos qué necesita tu empresa."
+        description="En el diagnóstico gratuito de 30 minutos revisamos tu operación y te digo con franqueza qué servicio te sirve, o si todavía no necesitas ninguno."
       />
     </>
   );

@@ -13,7 +13,7 @@ import {
 } from "@/components/Figuras";
 import { pageMetadata } from "@/lib/seo";
 import { serviceSchema } from "@/lib/schema";
-import { botonPrimario, botonSecundario, contenedor, rotulo } from "@/lib/estilos";
+import { botonPrimario, botonSecundario, contenedor, rotulo, tituloSeccion } from "@/lib/estilos";
 import { servicios } from "@/content/servicios";
 
 export const metadata = pageMetadata({
@@ -101,7 +101,7 @@ export default function HomePage() {
         </p>
         {/* Único H1 de la página: contiene la promesa central y la
             palabra clave por la que queremos rankear. */}
-        <h1 className="max-w-[1100px] text-[clamp(2.75rem,7.6vw,7rem)] font-bold leading-[0.95] tracking-[-0.04em]">
+        <h1 className="max-w-[900px] text-[clamp(2.25rem,4.8vw,4rem)] font-bold leading-[1.06] tracking-[-0.025em]">
           Antes de implementar un ERP,{" "}
           <span className="text-ocre">ordena tu negocio.</span>
         </h1>
@@ -148,7 +148,7 @@ export default function HomePage() {
             <p className="mb-5 font-mono text-[13px] text-[#A6AAB1]">
               01 / El problema
             </p>
-            <h2 className="mb-7 text-[clamp(2.5rem,5vw,4.5rem)] font-bold leading-[0.98] tracking-[-0.035em]">
+            <h2 className={`${tituloSeccion} mb-7`}>
               Digitalizar no ordena.
             </h2>
             <blockquote className="border-t border-[#3A3D42] pt-5 text-xl leading-snug text-[#D8DADD]">
@@ -181,7 +181,7 @@ export default function HomePage() {
         <div className="mb-14 flex flex-wrap items-end justify-between gap-x-12 gap-y-5">
           <div>
             <p className={`${rotulo} mb-5`}>02 / Servicios</p>
-            <h2 className="text-[clamp(2.25rem,4.4vw,4rem)] font-bold leading-none tracking-[-0.035em]">
+            <h2 className={tituloSeccion}>
               Cómo ayudo a tu negocio
             </h2>
           </div>
@@ -222,7 +222,7 @@ export default function HomePage() {
         <div className="flex flex-[1_1_420px] justify-end px-5 py-14 sm:px-8 lg:px-[72px] lg:py-24">
           <div className="w-full max-w-[520px]">
             <p className={`${rotulo} mb-5`}>03 / Para quién</p>
-            <h2 className="mb-8 text-4xl font-bold leading-tight tracking-[-0.03em]">
+            <h2 className="mb-8 text-[clamp(1.5rem,2.4vw,2rem)] font-bold leading-tight tracking-[-0.015em]">
               Esto es para ti si:
             </h2>
             <ul className="flex flex-col gap-5">
@@ -239,8 +239,8 @@ export default function HomePage() {
           </div>
         </div>
         <div className="flex-[1_1_420px] bg-papel px-5 py-14 sm:px-8 lg:px-[72px] lg:py-24">
-          <div className="max-w-[520px] lg:pt-[46px]">
-            <h2 className="mb-8 text-4xl font-bold leading-tight tracking-[-0.03em] text-gris-medio">
+          <div className="max-w-[520px] lg:pt-[42px]">
+            <h2 className="mb-8 text-[clamp(1.5rem,2.4vw,2rem)] font-bold leading-tight tracking-[-0.015em] text-gris-medio">
               Esto NO es para ti si:
             </h2>
             <ul className="flex flex-col gap-5 text-gris-medio">
