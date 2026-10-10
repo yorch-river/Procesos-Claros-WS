@@ -11,41 +11,41 @@ export default function CtaFinal({
   title = "¿Listo para poner orden en tu operación?",
   description,
   primaryLabel = "Solicitar Diagnóstico Gratuito",
-  variant = "azul",
+  variant = "acento",
 }: {
   title?: string;
   description: string;
   primaryLabel?: string;
-  variant?: "azul" | "oscuro";
+  variant?: "acento" | "oscuro";
 }) {
-  const isAzul = variant === "azul";
+  const isAcento = variant === "acento";
 
   return (
-    <section className={isAzul ? "bg-blue-600 py-20" : "bg-slate-900 py-20"}>
+    <section className={isAcento ? "bg-ocre py-20" : "bg-tinta py-20"}>
       <div className="mx-auto max-w-4xl px-4 text-center text-white">
-        <h2 className="mb-6 text-3xl font-bold">{title}</h2>
+        <h2 className="mb-6 text-4xl font-bold tracking-[-0.03em]">{title}</h2>
         <p
-          className={`mb-10 text-xl ${isAzul ? "text-blue-100" : "text-slate-400"}`}
+          className={`mb-10 text-xl ${isAcento ? "text-white/90" : "text-[#C9CCD2]"}`}
         >
           {description}
         </p>
         <div className="flex flex-col justify-center gap-4 sm:flex-row">
           <Link
             href="/contacto"
-            className={`rounded-xl px-8 py-4 font-bold transition-colors ${
-              isAzul
-                ? "bg-white text-blue-600 hover:bg-slate-100"
-                : "bg-blue-600 text-white hover:bg-blue-700"
+            className={`px-8 py-4 font-semibold transition-colors ${
+              isAcento
+                ? "bg-white text-tinta hover:bg-papel"
+                : "bg-ocre text-white hover:bg-ocre-oscuro"
             }`}
           >
             {primaryLabel}
           </Link>
           <Link
             href="/antes-del-erp"
-            className={`rounded-xl border-2 px-8 py-4 font-bold transition-colors ${
-              isAzul
-                ? "border-white text-white hover:bg-blue-700"
-                : "border-slate-600 text-white hover:bg-slate-800"
+            className={`border-[1.5px] px-8 py-4 font-semibold transition-colors ${
+              isAcento
+                ? "border-white text-white hover:bg-ocre-oscuro"
+                : "border-[#5B6068] text-white hover:border-white"
             }`}
           >
             ¿Por qué ordenar primero?
