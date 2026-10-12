@@ -130,7 +130,7 @@ export default function HomePage() {
           </p>
           <div className="flex flex-[1_1_300px] flex-wrap gap-3">
             <Link
-              href="/contacto"
+              href="/recursos"
               className={botonPrimario}
             >
               Haz el diagnóstico gratuito <span aria-hidden="true">→</span>
@@ -141,6 +141,11 @@ export default function HomePage() {
             >
               ¿Por qué ordenar primero?
             </Link>
+            {/* Dice qué recibe al hacer clic: el botón promete "diagnóstico" y
+                lo que llega es el test. Sin esta línea, la promesa engaña. */}
+            <p className="basis-full text-[15px] leading-snug text-gris">
+              Empieza con el test de madurez: 20 preguntas, 15 minutos.
+            </p>
           </div>
         </div>
       </section>
@@ -276,8 +281,8 @@ export default function HomePage() {
       </section>
 
       <CtaFinal
-        rotulo="04 / Diagnóstico gratuito · 30 min"
-        description="Conversemos 30 minutos sobre tu operación y evaluemos, sin costo, si tu empresa está lista para dar el paso."
+        rotulo="04 / Diagnóstico gratuito · Test en 15 min"
+        description="Empieza por el test de madurez: 20 preguntas que respondes con tu equipo y te dicen dónde está el desorden. Si quieres revisarlo conmigo, me envías tu resultado."
       />
     </>
   );

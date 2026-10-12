@@ -54,8 +54,9 @@ export default function Navbar() {
                   {link.name}
                 </Link>
               ))}
+              {/* Lleva al test, que es por donde empieza el diagnóstico. */}
               <Link
-                href="/contacto"
+                href="/recursos"
                 className="inline-flex min-h-[44px] items-center border-[1.5px] border-tinta px-[18px] text-[15px] font-semibold text-tinta transition-colors hover:bg-tinta hover:text-white"
               >
                 Diagnóstico gratuito

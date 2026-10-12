@@ -1,6 +1,15 @@
-"""Genera el Test de madurez operativa de Procesos Claros (recurso descargable).
+"""OBSOLETO. Generaba la primera versión del Test de madurez operativa.
 
-Uso:
+Desde octubre de 2026 el test que se publica es la versión 2026, mantenida a
+mano fuera del repositorio: tiene seis hojas (Inicio, Test, Resultado,
+Comparar equipo, Metodología y Config) y este script solo produce las cuatro
+originales. Ejecutarlo sobre el archivo publicado lo reemplazaría por una
+versión más pobre.
+
+Se conserva como referencia de cómo se armó la primera versión. Para cambiar
+el test hoy se edita el Excel y se reemplaza `public/descargas/`.
+
+Uso original:
     python tools/crear_test_madurez.py public/descargas/test-de-madurez-operativa.xlsx
 
 openpyxl escribe las fórmulas sin valores calculados. Después de generarlo,

@@ -140,7 +140,7 @@ export default function ServiciosPage() {
 
       <CtaFinal
         title="Veamos qué necesita tu empresa."
-        description="En el diagnóstico gratuito de 30 minutos revisamos tu operación y te digo con franqueza qué servicio te sirve, o si todavía no necesitas ninguno."
+        description="Empieza por el test de madurez. Con tu resultado en la mano te digo con franqueza qué servicio te sirve, o si todavía no necesitas ninguno."
       />
     </>
   );

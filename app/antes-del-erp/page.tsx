@@ -233,8 +233,8 @@ export default function BeforeErpPage() {
 
       <CtaFinal
         title="¿No estás seguro de por dónde empezar?"
-        description="Realiza mi diagnóstico de madurez operativa y obtén una hoja de ruta clara."
-        primaryLabel="Quiero el diagnóstico gratuito"
+        description="Responde el test de madurez operativa y obtén una hoja de ruta clara. Son 20 preguntas y 15 minutos."
+        primaryLabel="Quiero el test gratuito"
       />
     </>
   );
