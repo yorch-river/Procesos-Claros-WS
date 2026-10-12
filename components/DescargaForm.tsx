@@ -3,6 +3,7 @@
 import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
 import { solicitarDescarga, type DescargaState } from "@/app/recursos/actions";
+import CampoTieneErp from "@/components/CampoTieneErp";
 import { FiguraDesenredo } from "@/components/Figuras";
 import type { Recurso } from "@/content/recursos";
 
@@ -88,6 +89,8 @@ export default function DescargaForm({ recurso }: { recurso: Recurso }) {
             />
           </div>
         ))}
+
+        <CampoTieneErp idPrefijo="descarga-" etiquetaClase={claseEtiqueta} />
 
         {/* Trampa para bots: invisible para personas, irresistible para spam. */}
         <div aria-hidden="true" className="absolute left-[-9999px]">

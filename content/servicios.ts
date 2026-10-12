@@ -21,9 +21,9 @@ export const servicios: Servicio[] = [
     id: "diagnostico",
     title: "Diagnóstico de Procesos y Madurez",
     summary:
-      "Auditoría del flujo de trabajo actual y test de madurez operativa para saber si tu pyme está lista para digitalizar.",
+      "Auditoría del flujo de trabajo actual y test de madurez operativa para saber si tu empresa está lista para digitalizar, o por qué no rinde el sistema que ya tiene.",
     problem:
-      "No sabes si el problema es tu equipo, tus procesos o que realmente te falta software.",
+      "No sabes si el problema es tu equipo, tus procesos, que te falta software o que el que tienes no se usa como debería.",
     includes: [
       "Auditoría de flujo de trabajo actual.",
       "Identificación de cuellos de botella y “fugas” de rentabilidad.",
@@ -31,7 +31,7 @@ export const servicios: Servicio[] = [
       "Informe de hallazgos y prioridades.",
     ],
     result:
-      "Claridad total sobre el estado real de tu operación y qué debe arreglarse antes de invertir en sistemas.",
+      "Claridad total sobre el estado real de tu operación y qué debe arreglarse antes de invertir en sistemas, o para que el que ya tienes rinda.",
   },
   {
     id: "sistematizacion",
@@ -55,7 +55,7 @@ export const servicios: Servicio[] = [
     summary:
       "Definición de requerimientos, limpieza de datos y acompañamiento independiente en la selección de tu ERP.",
     problem:
-      "Quieres comprar un ERP pero no sabes cómo elegir ni qué pedirle al proveedor.",
+      "Quieres comprar un ERP, o cambiar el que tienes, pero no sabes cómo elegir ni qué pedirle al proveedor.",
     includes: [
       "Definición de requerimientos técnicos y funcionales.",
       "Limpieza de datos previa (catálogos, maestros).",

@@ -26,7 +26,7 @@ export const site = {
   },
   defaultTitle: "Consultoría de Procesos para Pymes | Procesos Claros",
   defaultDescription:
-    "Consultoría independiente para pymes en Chile: ordenamos y sistematizamos tus procesos antes de implementar un ERP, para que la tecnología no acelere el desorden.",
+    "Consultoría independiente en Chile: ordenamos y sistematizamos los procesos de tu empresa antes de implementar un ERP, y hacemos rendir el que ya tienes.",
 } as const;
 
 /** Convierte una ruta interna en URL absoluta para canonical, sitemap y OG. */

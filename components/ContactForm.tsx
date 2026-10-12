@@ -2,6 +2,7 @@
 
 import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
+import CampoTieneErp from "@/components/CampoTieneErp";
 import { FiguraDesenredo } from "@/components/Figuras";
 import { enviarContacto, type ContactState } from "@/app/contacto/actions";
 
@@ -116,6 +117,8 @@ export default function ContactForm() {
             className={claseCampo}
           />
         </div>
+
+        <CampoTieneErp etiquetaClase={claseEtiqueta} />
 
         <div>
           <label
