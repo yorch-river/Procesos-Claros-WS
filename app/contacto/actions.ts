@@ -29,6 +29,9 @@ export async function enviarContacto(
   const empresa = campo(formData, "empresa", 160);
   const email = campo(formData, "email", 200);
   const mensaje = campo(formData, "mensaje", 4000);
+  // No bloquea el envío si llega vacío: el formulario ya lo pide como
+  // obligatorio, y perder un contacto por este campo sería peor.
+  const tieneErp = campo(formData, "tiene_erp", 60) || "(sin responder)";
 
   if (!nombre || !empresa || !email || !mensaje) {
     return {
@@ -51,6 +54,7 @@ export async function enviarContacto(
       `Nombre:  ${nombre}`,
       `Empresa: ${empresa}`,
       `Email:   ${email}`,
+      `¿Tiene ERP?: ${tieneErp}`,
       "",
       "Mensaje:",
       mensaje,

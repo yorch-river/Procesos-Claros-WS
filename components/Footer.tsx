@@ -21,9 +21,9 @@ export default function Footer() {
               Procesos Claros
             </span>
             <p className="mb-6 max-w-sm text-[#A6AAB1]">
-              Consultoría independiente enfocada en ordenar y sistematizar pymes
-              antes de su transformación digital. Ayudamos a dueños de negocio a
-              recuperar el control.
+              Consultoría independiente para ordenar y sistematizar empresas,
+              antes y después de su transformación digital. Ayudamos a dueños y
+              gerentes a recuperar el control.
             </p>
           </div>
 

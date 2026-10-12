@@ -28,6 +28,8 @@ export async function solicitarDescarga(
   const nombre = campo(formData, "nombre", 120);
   const empresa = campo(formData, "empresa", 160);
   const email = campo(formData, "email", 200);
+  // No bloquea la descarga si llega vacío: la persona ya cumplió su parte.
+  const tieneErp = campo(formData, "tiene_erp", 60) || "(sin responder)";
 
   if (!nombre || !empresa || !email) {
     return {
@@ -52,6 +54,7 @@ export async function solicitarDescarga(
       `Nombre:  ${nombre}`,
       `Empresa: ${empresa}`,
       `Email:   ${email}`,
+      `¿Tiene ERP?: ${tieneErp}`,
     ].join("\n"),
   });
 

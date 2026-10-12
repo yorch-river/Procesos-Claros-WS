@@ -6,6 +6,7 @@ import {
   EsquemaDesorden,
   FiguraAutomatiza,
   FiguraDiagnostico,
+  FiguraErpParalelo,
   FiguraEstructura,
   FiguraExcel,
   FiguraPreparacion,
@@ -19,7 +20,7 @@ import { servicios } from "@/content/servicios";
 export const metadata = pageMetadata({
   title: "Consultoría de Procesos para Pymes | Procesos Claros",
   description:
-    "Antes de implementar un ERP, ordena tu negocio. Consultoría independiente en Chile para sistematizar los procesos de tu pyme.",
+    "Antes de implementar un ERP, ordena tu negocio. Y si ya tienes uno, haz que rinda. Consultoría independiente en Chile para ordenar y sistematizar empresas.",
   path: "/",
 });
 
@@ -38,6 +39,12 @@ const problemas = [
     figura: FiguraExcel,
     text: "Si tu equipo hoy depende de Excel y la memoria de “el que sabe”, un software nuevo será una pesadilla de implementación.",
   },
+  // Cuarto punto: nombra al que ya pasó por una implementación. Sin él, la
+  // sección solo le habla a quien todavía no compró nada.
+  {
+    figura: FiguraErpParalelo,
+    text: "Y si ya implementaste uno, el síntoma es otro: el sistema está instalado, pero la operación sigue viviendo en planillas paralelas.",
+  },
 ];
 
 // Se presentan como columnas independientes, no como pasos: cada servicio se
@@ -46,7 +53,7 @@ const ayudas = [
   {
     figura: FiguraDiagnostico,
     title: "Diagnóstico de madurez",
-    text: "Evaluamos objetivamente si tu empresa está lista para un sistema o si el caos operativo hará fracasar cualquier intento.",
+    text: "Evaluamos objetivamente si tu empresa está lista para un sistema o, si ya tienes uno, por qué no está rindiendo.",
     href: "/servicios#diagnostico",
     cta: "Ver el diagnóstico",
   },
@@ -69,8 +76,10 @@ const ayudas = [
 const paraTi = [
   "Eres dueño o gerente y sientes que pierdes el control de la operación.",
   "Tu empresa está creciendo y los métodos manuales ya no alcanzan.",
-  "Estás evaluando comprar un ERP pero tienes miedo de tirar el dinero.",
+  "Estás evaluando comprar un ERP, o cambiar el que tienes, y no quieres tirar el dinero.",
   "Quieres que tu empresa funcione sin que tú tengas que supervisar cada detalle.",
+  "Ya implementaste un ERP, pero la operación sigue dependiendo de Excel y de personas clave.",
+  "Tu empresa creció y ya tienes jefaturas, pero las decisiones siguen pasando por ti.",
 ];
 
 const noParaTi = [
@@ -97,7 +106,7 @@ export default function HomePage() {
       {/* Hero */}
       <section className={`${contenedor} pt-14 sm:pt-20 lg:pt-28`}>
         <p className={`${rotulo} mb-7`}>
-          [ Consultoría independiente · Pymes · Chile ]
+          [ Consultoría independiente · Pymes y empresas en crecimiento · Chile ]
         </p>
         {/* Único H1 de la página: contiene la promesa central y la
             palabra clave por la que queremos rankear. */}
@@ -106,10 +115,12 @@ export default function HomePage() {
           <span className="text-acento">ordena tu negocio.</span>
         </h1>
         <div className="mt-10 flex flex-wrap items-start gap-x-12 gap-y-7 border-t-2 border-tinta pt-7 lg:mt-16">
+          {/* El titular habla a quien todavía no compra; la bajada abre la
+              segunda puerta sin que el H1 pierda su filo. */}
           <p className="max-w-[560px] flex-[2_1_380px] text-xl leading-normal text-tinta-suave">
             Muchas pymes creen que necesitan un sistema. En realidad necesitan
-            procesos claros. Evita que la tecnología solo acelere tu desorden
-            actual.
+            procesos claros. Y si ya tienes uno y no rinde, el problema rara vez
+            es el software: son los procesos que nunca se definieron.
           </p>
           <div className="flex flex-[1_1_300px] flex-wrap gap-3">
             <Link

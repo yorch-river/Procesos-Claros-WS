@@ -168,6 +168,21 @@ export function FiguraExcel({ className }: FiguraProps) {
   );
 }
 
+/** El sistema arriba, el trabajo real abajo: planillas que lo esquivan. */
+export function FiguraErpParalelo({ className }: FiguraProps) {
+  return (
+    <FiguraOscura className={className}>
+      <rect x="13" y="5" width="22" height="15" />
+      <path d="M17 10h14M17 15h8" />
+      <path d="M24 20v6" strokeDasharray="2 3" opacity="0.6" />
+      <rect x="4" y="29" width="17" height="14" />
+      <path d="M4 34h17M12.5 29v14" />
+      <rect x="27" y="29" width="17" height="14" />
+      <path d="M27 34h17M35.5 29v14" />
+    </FiguraOscura>
+  );
+}
+
 /* ---- Servicios (sobre fondo blanco) ---- */
 
 function FiguraClara({ children, className }: FiguraProps & { children: React.ReactNode }) {
