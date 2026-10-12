@@ -58,8 +58,10 @@ export default function ContactForm() {
           ¡Gracias por tu mensaje!
         </h2>
         <p className="text-xl text-tinta-suave">
-          He recibido tu información. Me pondré en contacto contigo en las
-          próximas 24-48 horas para agendar tu diagnóstico gratuito.
+          He recibido tu información y te respondo en las próximas 24-48
+          horas. Si todavía no has hecho el test de madurez, hazlo antes de
+          que hablemos: la conversación rinde mucho más con tu resultado a la
+          vista.
         </p>
       </div>
     );

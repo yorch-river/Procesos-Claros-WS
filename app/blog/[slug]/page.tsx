@@ -184,7 +184,7 @@ export default async function PostPage({
 
       <CtaFinal
         title="¿Esto te suena a tu empresa?"
-        description="Conversemos 30 minutos sobre tu operación. Sin costo y sin compromiso."
+        description="Mide tu operación con el test de madurez: 20 preguntas, 15 minutos. Sin costo y sin compromiso."
       />
     </>
   );

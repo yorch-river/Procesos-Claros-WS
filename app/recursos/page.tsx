@@ -3,6 +3,7 @@ import EncabezadoPagina from "@/components/EncabezadoPagina";
 import {
   FiguraMadurez,
   FiguraRuta,
+  FiguraServiciosPersonas,
   FiguraTestMadurez,
 } from "@/components/Figuras";
 import { pageMetadata } from "@/lib/seo";
@@ -12,7 +13,7 @@ import { testMadurez } from "@/content/recursos";
 export const metadata = pageMetadata({
   title: "Test de madurez operativa gratuito (Excel)",
   description:
-    "Descarga gratis el test de madurez operativa: 20 preguntas en Excel para saber si tu empresa está lista para implementar un ERP y por dónde empezar a ordenar.",
+    "Descarga gratis el test de madurez operativa: 20 preguntas en Excel para saber si tu empresa está lista para un ERP, por dónde empezar a ordenar y cómo te comparas con otras pymes.",
   path: "/recursos",
 });
 
@@ -27,13 +28,19 @@ const incluye = [
     figura: FiguraMadurez,
     titulo: "Resultado automático",
     texto:
-      "Puntaje por área, un gráfico y un veredicto: lista para un sistema, zona intermedia o todavía no.",
+      "Puntaje por área, un gráfico y un veredicto: lista para un sistema, zona intermedia o todavía no. Además, cómo te comparas con otras pymes.",
   },
   {
     figura: FiguraRuta,
     titulo: "Por dónde empezar",
     texto:
       "Las dos áreas más débiles de tu empresa, con la primera acción concreta para cada una.",
+  },
+  {
+    figura: FiguraServiciosPersonas,
+    titulo: "Comparar a tu equipo",
+    texto:
+      "Una hoja para cruzar las respuestas de varias personas. Donde no coinciden, ahí está el proceso que nunca se definió.",
   },
 ];
 
@@ -70,9 +77,9 @@ export default function RecursosPage() {
             ))}
           </ul>
           <p className="mt-8 max-w-[560px] text-lg text-tinta-suave">
-            Consejo: pide a dos o tres personas de tu operación que lo respondan
-            por separado y comparen. Las diferencias entre respuestas son, en sí
-            mismas, un hallazgo.
+            Cuando lo termines, envíame el archivo y agendamos 30 minutos para
+            revisar tu resultado, sin costo. Prefiero conversar con tus números
+            a la vista antes que empezar de cero.
           </p>
         </section>
 

@@ -10,9 +10,9 @@ import { site } from "@/lib/site";
 import { contenedor, rotulo, tituloPagina } from "@/lib/estilos";
 
 export const metadata = pageMetadata({
-  title: "Diagnóstico gratuito para tu pyme | Contacto",
+  title: "Contacto | Procesos Claros",
   description:
-    "Agenda una sesión de diagnóstico gratuita de 30 minutos. Evaluamos tus procesos actuales y si tu empresa está lista para digitalizar. Sin compromiso.",
+    "Envíame el resultado de tu test de madurez y agendamos 30 minutos para revisarlo, sin costo. O escríbeme directamente si tienes otra consulta.",
   path: "/contacto",
 });
 
@@ -23,7 +23,7 @@ export default function ContactoPage() {
 
       <div className="mt-10 flex flex-wrap gap-x-20 gap-y-14 sm:mt-14">
         <div className="min-w-0 flex-[1_1_420px]">
-          <p className={`${rotulo} mb-6`}>[ Diagnóstico gratuito · 30 min ]</p>
+          <p className={`${rotulo} mb-6`}>[ Contacto ]</p>
           <h1 className={`${tituloPagina} mb-10`}>
             Empecemos a ordenar tu negocio.
           </h1>
@@ -31,9 +31,9 @@ export default function ContactoPage() {
           <div className="flex gap-6 border-t-2 border-tinta pt-7">
             <FiguraTreintaMinutos className="h-20 w-20 flex-none" />
             <p className="text-xl leading-normal text-tinta-suave">
-              Responde estas breves preguntas y te contactaré para una sesión
-              de diagnóstico gratuita de 30 minutos donde evaluaremos tus
-              procesos actuales.
+              ¿Hiciste el test de madurez? Envíame el Excel completado y
+              agendamos 30 minutos para revisar tu resultado, sin costo. Si
+              tienes otra consulta, escríbeme igual por aquí.
             </p>
           </div>
 

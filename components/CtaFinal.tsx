@@ -14,10 +14,10 @@ import { botonSecundario, contenedor, rotulo as claseRotulo } from "@/lib/estilo
  * lo que además dejaba a los buscadores sin ninguna ruta que seguir.
  */
 export default function CtaFinal({
-  rotulo = "Diagnóstico gratuito · 30 min",
+  rotulo = "Diagnóstico gratuito · Test en 15 min",
   title = "¿Listo para poner orden en tu operación?",
   description,
-  primaryLabel = "Solicitar diagnóstico gratuito",
+  primaryLabel = "Descargar el test gratuito",
 }: {
   rotulo?: string;
   title?: string;
@@ -54,14 +54,20 @@ export default function CtaFinal({
               Consultor independiente de procesos y operaciones
             </figcaption>
           </figure>
+          {/* El diagnóstico empieza por el test, no por una reunión: quien lo
+              completa y envía su resultado es quien agenda los 30 minutos. */}
           <Link
-            href="/contacto"
+            href="/recursos"
             className="inline-flex min-h-[60px] items-center justify-between gap-3 bg-acento px-6 text-[17px] font-semibold text-white transition-colors hover:bg-acento-oscuro"
           >
             {primaryLabel} <span aria-hidden="true">→</span>
           </Link>
-          <Link href="/antes-del-erp" className={`${botonSecundario} min-h-[52px]`}>
-            ¿Por qué ordenar primero?
+          <p className="text-[15px] leading-snug text-gris-medio">
+            Complétalo y envíame tu resultado: reviso tu operación y agendamos
+            30 minutos, sin costo.
+          </p>
+          <Link href="/contacto" className={`${botonSecundario} min-h-[52px]`}>
+            Escríbeme directamente
           </Link>
         </div>
       </div>

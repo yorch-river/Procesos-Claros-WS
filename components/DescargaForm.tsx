@@ -5,6 +5,7 @@ import { useFormStatus } from "react-dom";
 import { solicitarDescarga, type DescargaState } from "@/app/recursos/actions";
 import CampoTieneErp from "@/components/CampoTieneErp";
 import { FiguraDesenredo } from "@/components/Figuras";
+import { site } from "@/lib/site";
 import type { Recurso } from "@/content/recursos";
 
 const estadoInicial: DescargaState = { status: "idle" };
@@ -45,7 +46,7 @@ export default function DescargaForm({ recurso }: { recurso: Recurso }) {
           Listo, aquí tienes tu test.
         </h2>
         <p className="mb-8 text-lg text-tinta-suave">
-          Ábrelo en Excel o Google Sheets y empieza por la hoja «Cómo usar».
+          Ábrelo en Excel o Google Sheets y parte por la hoja «Inicio».
         </p>
         <a
           href={recurso.archivo}
@@ -56,6 +57,31 @@ export default function DescargaForm({ recurso }: { recurso: Recurso }) {
           <span aria-hidden="true">↓</span>
         </a>
         <p className="mt-3 font-mono text-[13px] text-gris">{recurso.formato}</p>
+
+        {/* El paso que convierte la descarga en conversación. Va acá y no en
+            un correo porque el archivo se entrega en pantalla: si no se pide
+            el reenvío ahora, no hay otro momento para pedirlo. */}
+        <div className="mt-10 border-t-2 border-tinta pt-7">
+          <p className={`${claseEtiqueta} mb-3`}>El paso siguiente</p>
+          <h3 className="mb-3 text-2xl font-bold leading-tight tracking-[-0.018em]">
+            ¿Quieres revisarlo conmigo?
+          </h3>
+          <p className="mb-5 text-lg leading-relaxed text-tinta-suave">
+            Complétalo y envíame el archivo. Reviso tu resultado antes de
+            hablar y agendamos 30 minutos para revisar los puntos débiles de
+            tu operación, sin costo.
+          </p>
+          <a
+            href={`mailto:${site.email}?subject=${encodeURIComponent("Resultado del test de madurez")}`}
+            className="inline-block break-all text-lg font-bold underline underline-offset-4 hover:text-acento"
+          >
+            {site.email}
+          </a>
+          <p className="mt-3 text-[15px] text-gris">
+            Escríbeme con el Excel adjunto. Si tu correo no se abre al tocar la
+            dirección, cópiala.
+          </p>
+        </div>
       </div>
     );
   }
