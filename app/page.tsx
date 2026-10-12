@@ -125,7 +125,7 @@ export default function HomePage() {
                 pasaba desapercibida. */}
             <strong className="font-semibold text-tinta">
               Y si ya tienes uno y no rinde, el problema rara vez es el
-              software: son los procesos que nunca se definieron.
+              software.
             </strong>
           </p>
           <div className="flex flex-[1_1_300px] flex-wrap gap-3">
