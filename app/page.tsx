@@ -119,8 +119,14 @@ export default function HomePage() {
               segunda puerta sin que el H1 pierda su filo. */}
           <p className="max-w-[560px] flex-[2_1_380px] text-xl leading-normal text-tinta-suave">
             Muchas pymes creen que necesitan un sistema. En realidad necesitan
-            procesos claros. Y si ya tienes uno y no rinde, el problema rara vez
-            es el software: son los procesos que nunca se definieron.
+            procesos claros.{" "}
+            {/* En negrita y en tinta plena: es la única frase del hero que
+                habla a quien ya compró un sistema, y en el gris del párrafo
+                pasaba desapercibida. */}
+            <strong className="font-semibold text-tinta">
+              Y si ya tienes uno y no rinde, el problema rara vez es el
+              software.
+            </strong>
           </p>
           <div className="flex flex-[1_1_300px] flex-wrap gap-3">
             <Link
